@@ -1,0 +1,105 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Levels.Base/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Levels.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Levels.Base.dll": {}
+        }
+      },
+      "Levels.UnityFramework/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Levels.UnityFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Levels.UnityFramework.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Levels.Base/1.0.0": {
+      "type": "project",
+      "path": "Levels.Base/Levels.Base.csproj",
+      "msbuildProject": "Levels.Base/Levels.Base.csproj"
+    },
+    "Levels.UnityFramework/1.0.0": {
+      "type": "project",
+      "path": "../DreamScaping_Unity/Levels.UnityFramework/Levels.UnityFramework.csproj",
+      "msbuildProject": "../DreamScaping_Unity/Levels.UnityFramework/Levels.UnityFramework.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Levels.Base >= 1.0.0",
+      "Levels.UnityFramework >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Sys0\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.ConsoleApp.csproj",
+      "projectName": "Levels.ConsoleApp",
+      "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.ConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Sys0\\.nuget\\packages\\",
+      "outputPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Sys0\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj": {
+              "projectPath": "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj"
+            },
+            "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj": {
+              "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Users\\Sys0\\.dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

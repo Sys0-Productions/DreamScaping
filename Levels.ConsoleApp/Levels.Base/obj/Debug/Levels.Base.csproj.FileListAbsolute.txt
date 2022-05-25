@@ -1,0 +1,6 @@
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\bin\Debug\Levels.Base.dll
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\bin\Debug\Levels.Base.pdb
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\obj\Debug\Levels.Base.csproj.AssemblyReference.cache
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\obj\Debug\Levels.Base.csproj.CoreCompileInputs.cache
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\obj\Debug\Levels.Base.dll
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Base\obj\Debug\Levels.Base.pdb
