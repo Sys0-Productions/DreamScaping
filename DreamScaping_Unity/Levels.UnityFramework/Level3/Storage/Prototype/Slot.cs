@@ -15,7 +15,7 @@ namespace Levels.UnityFramework.Storage
     {
         public Vector2 Position;
         public GameObject Holding;
-        public readonly List<Tuple<StorageSlot, ConnectionTypes>> Links = new List<Tuple<StorageSlot, ConnectionTypes>>();
+        public readonly List<Tuple<StorageSlot, LinkTypes>> Links = new List<Tuple<StorageSlot, LinkTypes>>();
 
         public StorageSlot(Vector2 position)
         {
@@ -28,7 +28,7 @@ namespace Levels.UnityFramework.Storage
             
             for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Connected);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == LinkTypes.Connected);
             }
 
             return flag;
@@ -40,7 +40,7 @@ namespace Levels.UnityFramework.Storage
             
             for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Locked);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == LinkTypes.Locked);
             }
 
             return flag;
@@ -52,7 +52,7 @@ namespace Levels.UnityFramework.Storage
             
             for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Disconnected);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == LinkTypes.Disconnected);
             }
 
             return flag;

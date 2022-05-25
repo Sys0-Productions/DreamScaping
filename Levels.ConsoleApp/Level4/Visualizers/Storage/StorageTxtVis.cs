@@ -65,13 +65,13 @@ public static class StorageTxtVis
             {
                 switch (connection.Item2)
                 {
-                    case ConnectionTypes.Connected:
+                    case LinkTypes.Connected:
                         builders[row + 1].Append(style.Connection);
                         break;
-                    case ConnectionTypes.Disconnected:
+                    case LinkTypes.Disconnected:
                         builders[row + 1].Append(style.Disconnected);
                         break;
-                    case ConnectionTypes.Locked:
+                    case LinkTypes.Locked:
                         builders[row + 1].Append(style.Locked);
                         break;
                 }
@@ -83,13 +83,13 @@ public static class StorageTxtVis
             {
                 switch (connection.Item2)
                 {
-                    case ConnectionTypes.Connected:
+                    case LinkTypes.Connected:
                         builders[row].Append(style.Connection);
                         break;
-                    case ConnectionTypes.Disconnected:
+                    case LinkTypes.Disconnected:
                         builders[row].Append(style.Disconnected);
                         break;
-                    case ConnectionTypes.Locked:
+                    case LinkTypes.Locked:
                         builders[row].Append(style.Locked);
                         break;
                 }

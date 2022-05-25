@@ -6,7 +6,7 @@
 
 namespace Levels.UnityFramework.Storage.Datatypes
 {
-    public enum ConnectionTypes
+    public enum LinkTypes
     {
         Not,
         Connected,

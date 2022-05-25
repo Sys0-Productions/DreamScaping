@@ -51,7 +51,7 @@ namespace Levels.UnityFramework.Storage
                         &&  // and the distance from the slots is +-1.
                         (Mathf.Abs(jPx - iPx) == 1 || Mathf.Abs(jPy -iPy)  == 1)) 
                     {
-                        currentSlot.Links.Add(Tuple.Create(compToSlot, ConnectionTypes.Connected));
+                        currentSlot.Links.Add(Tuple.Create(compToSlot, LinkTypes.Connected));
                     }
                 }
             }
