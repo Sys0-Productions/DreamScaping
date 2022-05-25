@@ -58,7 +58,7 @@ public static class StorageTxtVis
 
     private static void DrawSlotConnections(StringBuilder[] builders, StorageStylizer style, StorageSlot slot, int row)
     {
-        foreach (var connection in slot.Connections)
+        foreach (var connection in slot.Links)
         {
             // Draw connection type bellow.
             if (connection.Item1.Position.y > slot.Position.y)

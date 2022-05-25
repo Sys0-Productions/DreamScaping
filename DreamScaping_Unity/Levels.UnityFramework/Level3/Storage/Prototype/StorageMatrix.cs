@@ -8,10 +8,11 @@ namespace Levels.UnityFramework.Storage
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.CompilerServices;
     using UnityEngine;
     
     [Serializable]
-    public class StorageMatrix
+    public partial class StorageMatrix
     {
         [Header("Test1.1")]
         public Vector2 Size;

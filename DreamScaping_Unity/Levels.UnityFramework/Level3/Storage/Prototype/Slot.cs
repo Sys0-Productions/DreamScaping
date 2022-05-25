@@ -15,7 +15,7 @@ namespace Levels.UnityFramework.Storage
     {
         public Vector2 Position;
         public GameObject Holding;
-        public readonly List<Tuple<StorageSlot, ConnectionTypes>> Connections = new List<Tuple<StorageSlot, ConnectionTypes>>();
+        public readonly List<Tuple<StorageSlot, ConnectionTypes>> Links = new List<Tuple<StorageSlot, ConnectionTypes>>();
 
         public StorageSlot(Vector2 position)
         {
@@ -26,9 +26,9 @@ namespace Levels.UnityFramework.Storage
         {
             bool flag = false;
             
-            for (int i = 0; i < Connections.Count; i++)
+            for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Connections[i].Item1.Position == to && Connections[i].Item2 == ConnectionTypes.Connected);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Connected);
             }
 
             return flag;
@@ -38,9 +38,9 @@ namespace Levels.UnityFramework.Storage
         {
             bool flag = false;
             
-            for (int i = 0; i < Connections.Count; i++)
+            for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Connections[i].Item1.Position == to && Connections[i].Item2 == ConnectionTypes.Locked);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Locked);
             }
 
             return flag;
@@ -50,9 +50,9 @@ namespace Levels.UnityFramework.Storage
         {
             bool flag = false;
             
-            for (int i = 0; i < Connections.Count; i++)
+            for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Connections[i].Item1.Position == to && Connections[i].Item2 == ConnectionTypes.Disconnected);
+                flag = flag || (Links[i].Item1.Position == to && Links[i].Item2 == ConnectionTypes.Disconnected);
             }
 
             return flag;
@@ -62,9 +62,9 @@ namespace Levels.UnityFramework.Storage
         {
             bool flag = false;
             
-            for (int i = 0; i < Connections.Count; i++)
+            for (int i = 0; i < Links.Count; i++)
             {
-                flag = flag || (Connections[i].Item1.Position == to);
+                flag = flag || (Links[i].Item1.Position == to);
             }
 
             return flag;

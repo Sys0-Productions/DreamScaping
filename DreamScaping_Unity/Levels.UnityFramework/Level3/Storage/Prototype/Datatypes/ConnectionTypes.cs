@@ -8,6 +8,7 @@ namespace Levels.UnityFramework.Storage.Datatypes
 {
     public enum ConnectionTypes
     {
+        Not,
         Connected,
         Disconnected,
         Locked
