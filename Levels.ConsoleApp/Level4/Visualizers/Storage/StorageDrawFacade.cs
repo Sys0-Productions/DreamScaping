@@ -5,13 +5,14 @@
 // *********************************************************************************************************************
 
 using System.Text;
-using ExtensionMethods;
 using Levels.ConsoleApp.Visualizers.Storage;
 using Levels.UnityFramework.Storage;
 using UnityEngine;
 
 namespace MyNamespace
 {
+    using ExtensionMethods;
+
     class StorageDrawFacade
     {
         public static void Draw(Vector2 size)

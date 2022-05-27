@@ -1,16 +1,13 @@
 ﻿// *********************************************************************************************************************
 // Created: Sys0 
-// Levels.ConsoleApp/Levels.UnityFramework/ConnectionTypes.cs
-// Created: 2022-05-19-11:41 PM
+// Levels.ConsoleApp/Levels.Universal/IReport.cs
+// Created: 2022-05-26-5:44 PM
 // *********************************************************************************************************************
 
-namespace Levels.UnityFramework.Storage.Datatypes
+namespace Levels.Universal.ReportCodes.Core
 {
-    public enum LinkTypes
+    public interface IReport
     {
-        Not,
-        Connected,
-        Disconnected,
-        Locked
+
     }
 }

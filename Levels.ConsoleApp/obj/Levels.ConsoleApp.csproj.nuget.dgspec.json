@@ -11,22 +11,11 @@
         "projectPath": "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj",
         "frameworks": {
           "net471": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net471": {}
-      }
-    },
-    "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj": {
-      "restore": {
-        "projectUniqueName": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj",
-        "projectName": "Levels.Base",
-        "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj",
-        "frameworks": {
-          "net471": {
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj": {
+                "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj"
+              }
+            }
           }
         }
       },
@@ -59,8 +48,8 @@
               "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj": {
                 "projectPath": "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj"
               },
-              "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj": {
-                "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj"
+              "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj": {
+                "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj"
               }
             }
           }
@@ -91,6 +80,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Users\\Sys0\\.dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj": {
+      "restore": {
+        "projectUniqueName": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj",
+        "projectName": "Levels.Universal",
+        "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj",
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {}
       }
     }
   }

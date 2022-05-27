@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DreamScaping_Unity\Levels.UnityFramework\Levels.UnityFramework.csproj" />
-      <ProjectReference Include="Levels.Base\Levels.Base.csproj" />
+      <ProjectReference Include="Levels.Universal\Levels.Universal.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,14 +20,17 @@
 
     <ItemGroup>
       <Compile Remove="Levels.Base\**" />
+      <Compile Remove="Levels.Universal\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Levels.Base\**" />
+      <EmbeddedResource Remove="Levels.Universal\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Levels.Base\**" />
+      <None Remove="Levels.Universal\**" />
     </ItemGroup>
 
 </Project>

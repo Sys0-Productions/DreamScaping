@@ -4,6 +4,7 @@
 // Created: 2022-05-19-11:51 PM
 // *********************************************************************************************************************
 
+// ReSharper disable CompareOfFloatsByEqualityOperator
 namespace Levels.ConsoleApp.Visualizers.Storage;
 
 using System.Text;
@@ -49,29 +50,30 @@ public static class StorageTxtVis
             }
         }
 
-        StringBuilder EndMatrix = new StringBuilder();
+        StringBuilder endMatrix = new StringBuilder();
         foreach (var builder in builders)
-            EndMatrix.Append(builder.ToString());
+            endMatrix.Append(builder.ToString());
 
-        return EndMatrix.ToString();
+        return endMatrix.ToString();
     }
 
     private static void DrawSlotConnections(StringBuilder[] builders, StorageStylizer style, StorageSlot slot, int row)
     {
-        foreach (var connection in slot.Links)
+        // TODO : Implement new LinkMatrix.
+        /*foreach (var connection in slot.Links)
         {
             // Draw connection type bellow.
             if (connection.Item1.Position.y > slot.Position.y)
             {
                 switch (connection.Item2)
                 {
-                    case LinkTypes.Connected:
+                    case ConnectionTypes.Connected:
                         builders[row + 1].Append(style.Connection);
                         break;
-                    case LinkTypes.Disconnected:
+                    case ConnectionTypes.Disconnected:
                         builders[row + 1].Append(style.Disconnected);
                         break;
-                    case LinkTypes.Locked:
+                    case ConnectionTypes.Locked:
                         builders[row + 1].Append(style.Locked);
                         break;
                 }
@@ -83,18 +85,18 @@ public static class StorageTxtVis
             {
                 switch (connection.Item2)
                 {
-                    case LinkTypes.Connected:
+                    case ConnectionTypes.Connected:
                         builders[row].Append(style.Connection);
                         break;
-                    case LinkTypes.Disconnected:
+                    case ConnectionTypes.Disconnected:
                         builders[row].Append(style.Disconnected);
                         break;
-                    case LinkTypes.Locked:
+                    case ConnectionTypes.Locked:
                         builders[row].Append(style.Locked);
                         break;
                 }
             }
-        }
+        }*/
     }
 
 

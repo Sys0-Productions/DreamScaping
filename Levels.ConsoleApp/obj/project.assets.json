@@ -2,42 +2,45 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Levels.Base/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Levels.Base.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Levels.Base.dll": {}
-        }
-      },
       "Levels.UnityFramework/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "Levels.Universal": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Levels.UnityFramework.dll": {}
         },
         "runtime": {
           "bin/placeholder/Levels.UnityFramework.dll": {}
+        }
+      },
+      "Levels.Universal/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Levels.Universal.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Levels.Universal.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Levels.Base/1.0.0": {
-      "type": "project",
-      "path": "Levels.Base/Levels.Base.csproj",
-      "msbuildProject": "Levels.Base/Levels.Base.csproj"
-    },
     "Levels.UnityFramework/1.0.0": {
       "type": "project",
       "path": "../DreamScaping_Unity/Levels.UnityFramework/Levels.UnityFramework.csproj",
       "msbuildProject": "../DreamScaping_Unity/Levels.UnityFramework/Levels.UnityFramework.csproj"
+    },
+    "Levels.Universal/1.0.0": {
+      "type": "project",
+      "path": "Levels.Universal/Levels.Universal.csproj",
+      "msbuildProject": "Levels.Universal/Levels.Universal.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Levels.Base >= 1.0.0",
-      "Levels.UnityFramework >= 1.0.0"
+      "Levels.UnityFramework >= 1.0.0",
+      "Levels.Universal >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -68,8 +71,8 @@
             "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj": {
               "projectPath": "F:\\sys0\\Projects\\DreamScaping\\DreamScaping_Unity\\Levels.UnityFramework\\Levels.UnityFramework.csproj"
             },
-            "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj": {
-              "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Base\\Levels.Base.csproj"
+            "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj": {
+              "projectPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.Universal\\Levels.Universal.csproj"
             }
           }
         }

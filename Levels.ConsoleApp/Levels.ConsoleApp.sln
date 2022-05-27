@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.ConsoleApp", "Levels
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.UnityFramework", "..\DreamScaping_Unity\Levels.UnityFramework\Levels.UnityFramework.csproj", "{07011C37-0BDE-4910-8D36-EFC683F808D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.Base", "Levels.Base\Levels.Base.csproj", "{9919869A-B5F1-4A36-9EEC-4790BF60600C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.Universal", "Levels.Universal\Levels.Universal.csproj", "{9919869A-B5F1-4A36-9EEC-4790BF60600C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

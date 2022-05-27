@@ -1,10 +1,10 @@
 ﻿// *********************************************************************************************************************
 // Created: Sys0 
-// Levels.ConsoleApp/Levels.Base/ArrayFill.cs
+// Levels.ConsoleApp/Levels.Universal/ArrayFill.cs
 // Created: 2022-05-24-4:02 AM
 // *********************************************************************************************************************
 
-namespace Levels.Base.Constructors
+namespace Levels.Universal.Constructors
 {
     using System.Collections;
     using System.Collections.Generic;
