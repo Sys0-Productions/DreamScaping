@@ -21,7 +21,12 @@ namespace Levels.Universal
         
         private static Report PullFromPool(string message, object source, Report next = null)
         {
-            return ReportPool.PullSetup(message, source, next);
+            return Report.Setup(ReportPool.Pull(), message, source, next);
+        }
+        
+        private static T PullFromPool<T>(string message, object source, Report next = null) where T : Report
+        {
+            return Report.Setup(ReportPool.Pull(), message, source, next) as T;
         }
 
         public static Report Setup(Report rep, string message, object source, Report next)

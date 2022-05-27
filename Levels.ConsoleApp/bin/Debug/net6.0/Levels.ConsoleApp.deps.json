@@ -8,22 +8,25 @@
     ".NETCoreApp,Version=v6.0": {
       "Levels.ConsoleApp/1.0.0": {
         "dependencies": {
-          "Levels.Base": "1.0.0",
           "Levels.UnityFramework": "1.0.0",
+          "Levels.Universal": "1.0.0",
           "UnityEngine": "0.0.0.0"
         },
         "runtime": {
           "Levels.ConsoleApp.dll": {}
         }
       },
-      "Levels.Base/1.0.0": {
-        "runtime": {
-          "Levels.Base.dll": {}
-        }
-      },
       "Levels.UnityFramework/1.0.0": {
+        "dependencies": {
+          "Levels.Universal": "1.0.0"
+        },
         "runtime": {
           "Levels.UnityFramework.dll": {}
+        }
+      },
+      "Levels.Universal/1.0.0": {
+        "runtime": {
+          "Levels.Universal.dll": {}
         }
       },
       "UnityEngine/0.0.0.0": {
@@ -42,12 +45,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Levels.Base/1.0.0": {
+    "Levels.UnityFramework/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Levels.UnityFramework/1.0.0": {
+    "Levels.Universal/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -4,7 +4,7 @@
 // Created: 2022-05-19-11:41 PM
 // *********************************************************************************************************************
 
-namespace Levels.UnityFramework.Storage.Datatypes
+namespace Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes
 {
     public enum ConnectionTypes
     {

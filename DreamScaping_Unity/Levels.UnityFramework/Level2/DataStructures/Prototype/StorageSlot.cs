@@ -4,21 +4,15 @@
 // Created: 2022-05-19-11:40 PM
 // *********************************************************************************************************************
 
-namespace Levels.UnityFramework.Storage
+namespace Levels.UnityFramework.DataStructure.NodeMatrix
 {
-    using System;
-    using System.Collections.Generic;
-    using Levels.UnityFramework.Storage.Datatypes;
+    using Levels.UnityFramework.Storage;
     using UnityEngine;
     
-    public class StorageSlot
+    public class StorageSlot : Node<GameObject>
     {
-        public Vector2 Position;
-        public GameObject Holding;
+        public StorageSlot((int x, int y) position) : base(position) { }
 
-        public StorageSlot(Vector2 position)
-        {
-            Position = position;
-        }
+        public StorageSlot() { }
     }
 }

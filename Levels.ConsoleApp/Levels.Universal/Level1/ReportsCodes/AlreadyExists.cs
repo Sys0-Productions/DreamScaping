@@ -10,9 +10,9 @@ namespace Levels.Universal
     
     public partial class Report
     {
-        public static AlreadyExists AlreadyExists(string message = "")
+        public static AlreadyExists AlreadyExists(string message = "", object source = null)
         {
-            return ReportPool.PullSetup( string.IsNullOrEmpty(message) ? "This indicates that something already existed." : message) as AlreadyExists;
+            return Report.PullFromPool<AlreadyExists>(string.IsNullOrEmpty(message) ? "This indicates that something already existed." : message, source, null);
         }
     }
 }

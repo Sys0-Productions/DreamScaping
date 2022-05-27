@@ -5,22 +5,23 @@
 // *********************************************************************************************************************
 
 using System.Text;
-using Levels.ConsoleApp.Visualizers.Storage;
-using Levels.UnityFramework.Storage;
+using Levels.ConsoleApp.Visualizers.DataStructures;
+using Levels.UnityFramework.DataStructure.NodeMatrix;
 using UnityEngine;
 
 namespace MyNamespace
 {
     using ExtensionMethods;
+    using Levels.UnityFramework.Storage;
 
     class StorageDrawFacade
     {
-        public static void Draw(Vector2 size)
+        public static void Draw((int x, int y) size)
         {
             Console.WriteLine(StorageTxtVis.Draw(
-                new StorageMatrix(size),
+                new NodeMatrix<Node<int>>(size),
                 new List<StringBuilder>().FillWithNew((int)size.y * 2 - 1).ToArray(),
-                new StorageStylizer()));
+                new NodeMatrixStylizer()));
         }
     }
 }

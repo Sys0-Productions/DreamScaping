@@ -13,13 +13,19 @@ public class ReportPool
     // Linked node chain, only pull/add from the top of a stack.
     private readonly Stack<Report> _reportPoolStack = new Stack<Report>();
 
-    public static Report PullSetup(string message, object source = null, Report next = null)
+    public ReportPool()
+    {
+        // TODO: Make good.
+        service = this;
+    }
+
+    public static Report Pull()
     {
         if (service._reportPoolStack.Count == 0)
-            return new Report(message, source, next);
+            return new Report();
         
         var holder = service._reportPoolStack.Pop();
-        return Report.Setup(holder, message, source, next);
+        return holder;
     }
 
     public static void StartReport()

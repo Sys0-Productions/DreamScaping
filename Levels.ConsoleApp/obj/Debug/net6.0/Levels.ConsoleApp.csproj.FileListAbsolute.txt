@@ -18,5 +18,5 @@ F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\obj\Debug\net6.0\refint\Levels.C
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\obj\Debug\net6.0\Levels.ConsoleApp.pdb
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\obj\Debug\net6.0\Levels.ConsoleApp.genruntimeconfig.cache
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\obj\Debug\net6.0\ref\Levels.ConsoleApp.dll
-F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\bin\Debug\net6.0\Levels.Base.dll
-F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\bin\Debug\net6.0\Levels.Base.pdb
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\bin\Debug\net6.0\Levels.Universal.dll
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\bin\Debug\net6.0\Levels.Universal.pdb

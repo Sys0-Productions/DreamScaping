@@ -5,29 +5,32 @@
 // *********************************************************************************************************************
 
 // ReSharper disable CompareOfFloatsByEqualityOperator
-namespace Levels.ConsoleApp.Visualizers.Storage;
+namespace Levels.ConsoleApp.Visualizers.DataStructures;
 
+using System.Drawing;
 using System.Text;
+using Levels.UnityFramework.DataStructure.NodeMatrix;
+using Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes;
+using Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic;
 using Levels.UnityFramework.Storage;
-using Levels.UnityFramework.Storage.Datatypes;
 
 public static class StorageTxtVis
 {
     /// <summary>
     /// Draws Storage Info
     /// </summary>
-    /// <param name="storage"></param>
-    /// <param name="builders">Must have double the number of rows as there are in the <see cref="storage.Size"/> minus one.</param>
+    /// <param name="nodeage"></param>
+    /// <param name="builders">Must have double the number of rows as there are in the <see cref="Size"/> minus one.</param>
     /// <param name="style">The style to use for drawing.</param>
     /// <returns></returns>
-    public static string Draw(StorageMatrix storage, StringBuilder[] builders, StorageStylizer style)
+    public static string Draw<TN>(NodeMatrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style)
     {
-        if (builders.Length != storage.Size.y * 2 - 1)
+        if (builders.Length != node.Size.y * 2 - 1)
             throw new ArgumentException("Not enough builders passed. Check method param doc for details.");
 
 
         // Go over each slot
-        foreach (var slot in storage.Slots)
+        foreach (var slot in node.Nodes)
         {
             int index = (int)slot.Position.y;
             // Have a spacer row builder for every row, and then account for array position of builder.
@@ -38,10 +41,10 @@ public static class StorageTxtVis
             builders[row].Append(style.Slot);
 
             // Draw Connections bellow or to the right of slot.
-            DrawSlotConnections(builders, style, slot, row);
+            DrawSlotConnections(node, slot, row, builders, style);
 
             // Draw new line char for end of matrix.
-            if (slot.Position.x == storage.Size.x)
+            if (slot.Position.x == node.Size.x)
             {
                 builders[row].Append('\n');
                 
@@ -57,55 +60,25 @@ public static class StorageTxtVis
         return endMatrix.ToString();
     }
 
-    private static void DrawSlotConnections(StringBuilder[] builders, StorageStylizer style, StorageSlot slot, int row)
+    private static void DrawSlotConnections<TN>(NodeMatrix<TN> nodes, Node<TN> currentSlot, int row, StringBuilder[] builders, NodeMatrixStylizer style)
     {
         // TODO : Implement new LinkMatrix.
-        /*foreach (var connection in slot.Links)
-        {
-            // Draw connection type bellow.
-            if (connection.Item1.Position.y > slot.Position.y)
-            {
-                switch (connection.Item2)
-                {
-                    case ConnectionTypes.Connected:
-                        builders[row + 1].Append(style.Connection);
-                        break;
-                    case ConnectionTypes.Disconnected:
-                        builders[row + 1].Append(style.Disconnected);
-                        break;
-                    case ConnectionTypes.Locked:
-                        builders[row + 1].Append(style.Locked);
-                        break;
-                }
+        List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> links = nodes.ViewLinksOn( currentSlot);
 
+        foreach (var link in links)
+        {
+            // If the connection is to the right of currentSlot.
+            if (link.nodeA.Position.x < link.nodeB.Position.x && link.nodeA.Position.y == link.nodeB.Position.y)
+            {
+                builders[row].Append(style.GetConnectionStyle(link.Connection));
+            }
+
+            // If the connection is bellow of currentSlot.
+            if (link.nodeA.Position.x == link.nodeB.Position.x && link.nodeA.Position.y < link.nodeB.Position.y && row + 1 != builders.Length)
+            {
+                builders[row + 1].Append(style.GetConnectionStyle(link.Connection));
                 builders[row + 1].Append(' ');
             }
-
-            if (connection.Item1.Position.x > slot.Position.x)
-            {
-                switch (connection.Item2)
-                {
-                    case ConnectionTypes.Connected:
-                        builders[row].Append(style.Connection);
-                        break;
-                    case ConnectionTypes.Disconnected:
-                        builders[row].Append(style.Disconnected);
-                        break;
-                    case ConnectionTypes.Locked:
-                        builders[row].Append(style.Locked);
-                        break;
-                }
-            }
-        }*/
-    }
-
-
-
-    private enum Keys
-    {
-        slot = 0,
-        con = 1,
-        locked = 2,
-        not = 3
+        }
     }
 }

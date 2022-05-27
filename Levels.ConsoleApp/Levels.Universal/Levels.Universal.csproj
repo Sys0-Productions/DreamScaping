@@ -43,6 +43,11 @@
         <Compile Include="Level0\Constructors\ArrayFill.cs" />
         <Compile Include="Level0\IEnumerableExtensions\EnumerableExtension.cs" />
         <Compile Include="Level0\ReportCodes.Core\IReport.cs" />
+        <Compile Include="Level1\DataStructures\Datatypes\ConnectionTypes.cs" />
+        <Compile Include="Level1\DataStructures\Node.cs" />
+        <Compile Include="Level1\DataStructures\NodeMatrix.cs" />
+        <Compile Include="Level1\DataStructures\NodeMatrix.LinkLogic.cs" />
+        <Compile Include="Level1\DataStructures\NodeMatrixBuilder.cs" />
         <Compile Include="Level1\ReportsCodes\AlreadyExists.cs" />
         <Compile Include="Level1\ReportsCodes\CreationReport.cs" />
         <Compile Include="Level1\ReportsCodes\Report.cs" />
