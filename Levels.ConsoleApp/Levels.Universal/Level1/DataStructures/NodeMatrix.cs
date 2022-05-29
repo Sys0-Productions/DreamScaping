@@ -11,27 +11,28 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix
     using Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes;
     using Levels.UnityFramework.Storage;
     
-    public partial class NodeMatrix<TN>
+    public class NodeMatrix<TN>
     {
-        // TODO: Make this not public.
-        public (int x, int y) Size;
+        private (int x, int y) Size;
+            public (int x, int y) GetSize() { return Size;}
         
-        // TODO: Make this not public.
-        public readonly List<Node<TN>> Nodes = new List<Node<TN>>();
+        private readonly List<Node<TN>> _nodes = new List<Node<TN>>();
+            public void AddNode(Node<TN> node) {_nodes.Add(node);}
+            public List<Node<TN>> GetNodes() {return _nodes;}
         
-        internal readonly List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> _links = 
+        internal readonly List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> _Links = 
             new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
 
-
+        // TODO: Make this creation not inside NodeMatrix, but have builder be what is used to create a matrix.
         public NodeMatrix((int x, int y) size)
         {
             Size = size;
-            NodeMatrixBuilder.CreateStorageSlots(this);
+            NodeMatrixBuilder.FillNodeMatrix(this);
         }
 
         public int SlotCount()
         {
-            return (int)Size.x * (int)Size.y;
+            return Size.x * Size.y;
         }
     }
 }

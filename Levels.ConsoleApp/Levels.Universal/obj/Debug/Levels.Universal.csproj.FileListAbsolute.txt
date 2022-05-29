@@ -4,3 +4,9 @@ F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\obj\Debug\Level
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\obj\Debug\Levels.Universal.csproj.CoreCompileInputs.cache
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\obj\Debug\Levels.Universal.dll
 F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\obj\Debug\Levels.Universal.pdb
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\bin\Debug\Grace.dll
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\bin\Debug\Serilog.dll
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\bin\Debug\Grace.pdb
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\bin\Debug\Grace.xml
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\bin\Debug\Serilog.xml
+F:\sys0\Projects\DreamScaping\Levels.ConsoleApp\Levels.Universal\obj\Debug\Levels.Universal.csproj.CopyComplete

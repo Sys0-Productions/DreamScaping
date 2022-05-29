@@ -9,22 +9,22 @@ using Levels.Universal;
 
 public class ReportPool
 {
-    private static ReportPool service;
+    private static ReportPool _service;
     // Linked node chain, only pull/add from the top of a stack.
     private readonly Stack<Report> _reportPoolStack = new Stack<Report>();
 
     public ReportPool()
     {
         // TODO: Make good.
-        service = this;
+        _service = this;
     }
 
     public static Report Pull()
     {
-        if (service._reportPoolStack.Count == 0)
+        if (_service._reportPoolStack.Count == 0)
             return new Report();
         
-        var holder = service._reportPoolStack.Pop();
+        var holder = _service._reportPoolStack.Pop();
         return holder;
     }
 

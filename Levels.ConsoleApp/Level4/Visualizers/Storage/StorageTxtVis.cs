@@ -10,7 +10,6 @@ namespace Levels.ConsoleApp.Visualizers.DataStructures;
 using System.Drawing;
 using System.Text;
 using Levels.UnityFramework.DataStructure.NodeMatrix;
-using Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes;
 using Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic;
 using Levels.UnityFramework.Storage;
 
@@ -25,18 +24,31 @@ public static class StorageTxtVis
     /// <returns></returns>
     public static string Draw<TN>(NodeMatrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style)
     {
-        if (builders.Length != node.Size.y * 2 - 1)
+        if (builders.Length != node.GetSize().y * 2 - 1)
             throw new ArgumentException("Not enough builders passed. Check method param doc for details.");
+        
+        DrawNodesAndLinks(node, builders, style);
+        
+        return BuilderArrayToString(builders);
+    }
 
+    private static string BuilderArrayToString(StringBuilder[] builders)
+    {
+        StringBuilder endMatrix = new StringBuilder();
+        foreach (var builder in builders)
+            endMatrix.Append(builder.ToString());
+        return endMatrix.ToString();
+    }
 
-        // Go over each slot
-        foreach (var slot in node.Nodes)
+    private static void DrawNodesAndLinks<TN>(NodeMatrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style)
+    {
+        foreach (var slot in node.GetNodes())
         {
-            int index = (int)slot.Position.y;
+            int index = slot.Position.y;
             // Have a spacer row builder for every row, and then account for array position of builder.
             // The row will be offset by the number of spacer rows above.
             int row = index + index - 2;
-            
+
             // Draw the slot
             builders[row].Append(style.Slot);
 
@@ -44,26 +56,19 @@ public static class StorageTxtVis
             DrawSlotConnections(node, slot, row, builders, style);
 
             // Draw new line char for end of matrix.
-            if (slot.Position.x == node.Size.x)
+            if (slot.Position.x == node.GetSize().x)
             {
                 builders[row].Append('\n');
-                
-                if(row + 1 < builders.Length)
+
+                if (row + 1 < builders.Length)
                     builders[row + 1].Append('\n');
             }
         }
-
-        StringBuilder endMatrix = new StringBuilder();
-        foreach (var builder in builders)
-            endMatrix.Append(builder.ToString());
-
-        return endMatrix.ToString();
     }
 
     private static void DrawSlotConnections<TN>(NodeMatrix<TN> nodes, Node<TN> currentSlot, int row, StringBuilder[] builders, NodeMatrixStylizer style)
     {
-        // TODO : Implement new LinkMatrix.
-        List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> links = nodes.ViewLinksOn( currentSlot);
+        var links = nodes.ViewLinksOn( currentSlot);
 
         foreach (var link in links)
         {

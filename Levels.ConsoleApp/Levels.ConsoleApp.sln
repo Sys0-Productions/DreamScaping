@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.UnityFramework", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.Universal", "Levels.Universal\Levels.Universal.csproj", "{9919869A-B5F1-4A36-9EEC-4790BF60600C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Levels.Universal.UnitTests", "..\Levels.Universal.UnitTests\Levels.Universal.UnitTests.csproj", "{94C9ABB2-984A-4F41-B291-594758746E92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{9919869A-B5F1-4A36-9EEC-4790BF60600C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9919869A-B5F1-4A36-9EEC-4790BF60600C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9919869A-B5F1-4A36-9EEC-4790BF60600C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C9ABB2-984A-4F41-B291-594758746E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C9ABB2-984A-4F41-B291-594758746E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C9ABB2-984A-4F41-B291-594758746E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C9ABB2-984A-4F41-B291-594758746E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
