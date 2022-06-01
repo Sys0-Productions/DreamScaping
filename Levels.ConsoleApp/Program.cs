@@ -29,7 +29,7 @@ class Program
         Console.WriteLine("\n");
         Console.WriteLine("\n");
         
-        StorageDrawFacade.Draw((10, 7));
+        StorageDrawFacade.Draw((25, 25));
     }
 }
     

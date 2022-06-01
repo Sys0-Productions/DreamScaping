@@ -13,26 +13,24 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix
     
     public class NodeMatrix<TN>
     {
-        private (int x, int y) Size;
-            public (int x, int y) GetSize() { return Size;}
-        
-        private readonly List<Node<TN>> _nodes = new List<Node<TN>>();
-            public void AddNode(Node<TN> node) {_nodes.Add(node);}
+        private (int x, int y) _size;
+            public (int x, int y) GetSize() { return _size;}
+            public void SetSize((int x, int y) size) { _size = size;}
+
+            private readonly List<Node<TN>> _nodes = new List<Node<TN>>();
             public List<Node<TN>> GetNodes() {return _nodes;}
         
         internal readonly List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> _Links = 
             new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
 
-        // TODO: Make this creation not inside NodeMatrix, but have builder be what is used to create a matrix.
-        public NodeMatrix((int x, int y) size)
-        {
-            Size = size;
-            NodeMatrixBuilder.FillNodeMatrix(this);
-        }
-
         public int SlotCount()
         {
-            return Size.x * Size.y;
+            return _size.x * _size.y;
+        }
+
+        public static NodeMatrix<TN> Build((int x, int y) size)
+        {
+            return NodeMatrixBuilder.Build<TN>((size.x, size.y));
         }
     }
 }

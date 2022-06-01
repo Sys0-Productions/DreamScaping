@@ -7,39 +7,32 @@
 namespace Levels.Universal.Tests.DataStructures
 {
     using Levels.UnityFramework.DataStructure.NodeMatrix;
+    using Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic;
     using Levels.UnityFramework.Storage;
     using NUnit.Framework;
 
     [TestFixture]
     public class NodeMatrixBuilderTest
     {
+        [SetUp]
+        public void Setup()
+        {
+            new ReportPool();
+        }
+        
         // Test name convention.
         // MethodBeingTested_Scenario_ExpectedBehavior
         [Test]
-        public void FillNodeMatrix_MultipleSizes_ValidNodeMatrixReturned()
+        [TestCase(1, 1)]
+        [TestCase(5, 1)]
+        [TestCase(2, 2)]
+        [TestCase(25, 25)]
+        public void FillNodeMatrix_MultipleSizes_ReturnValidNodeMatrix(int x, int y)
         {
-            // TODO: move this to DI.
-            new ReportPool();
+            var holder = NodeMatrix<int>.Build((x, y));
             
-            var holder = new NodeMatrix<int>((1, 1));
-            
-            Assert.IsTrue(holder.GetNodes().Count == 1);
-
-            holder = new NodeMatrix<int>((1, 2));
-            
-            Assert.IsTrue(holder.GetNodes().Count == 2);
-            
-            /*
-            new NodeMatrix<Node<int>>((1, 3));
-            new NodeMatrix<Node<int>>((1, 4));
-            new NodeMatrix<Node<int>>((2, 1));
-            new NodeMatrix<Node<int>>((3, 1));
-            new NodeMatrix<Node<int>>((4, 1));
-            new NodeMatrix<Node<int>>((4, 2));
-            new NodeMatrix<Node<int>>((2, 4));
-            new NodeMatrix<Node<int>>((4, 4));
-            new NodeMatrix<Node<int>>((128, 4));
-            new NodeMatrix<Node<int>>((128, 128));*/
+            Assert.IsTrue(holder.GetNodes().Count == x * y && 
+                          holder.ViewAllLinks().Count == (x - 1) * y + x * (y - 1));
         }
     }
 }

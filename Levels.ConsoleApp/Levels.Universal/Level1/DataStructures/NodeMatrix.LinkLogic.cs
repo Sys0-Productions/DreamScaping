@@ -195,6 +195,26 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         }
         
         /// <summary>
+        /// Returns a copy of all links for <see cref="a"/> if there are any.
+        /// </summary>
+        /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> to check against.</param>
+        /// <param name="a">The nodes the links are on.</param>
+        /// <returns>Will return all links if any exist, otherwise the returned link will be empty,
+        /// check value for link.
+        /// The returned List will have the requested node first in the tuple.</returns>
+        public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> ViewAllLinks<TN>(this NodeMatrix<TN> nodeMatrix)
+        {
+            var holder = new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
+            
+            foreach (var link in nodeMatrix._Links)
+            {
+                holder.Add(link);
+            }
+            
+            return holder;
+        }
+        
+        /// <summary>
         /// Will try to add the <see cref="link"/> to the <see cref="storage"/>.
         /// Check to make sure the link doesn't already exist, or exists with a different connection.
         /// </summary>

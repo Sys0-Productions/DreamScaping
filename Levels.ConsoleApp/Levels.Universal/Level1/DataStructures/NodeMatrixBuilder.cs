@@ -14,6 +14,15 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.Builder
     
     public static class NodeMatrixBuilder
     {
+        public static NodeMatrix<TN> Build<TN>((int x, int y) size)
+        {
+            var holder = new NodeMatrix<TN>();
+            holder.SetSize(size);
+            FillNodeMatrix(holder);
+            
+            return holder;
+        }
+        
         /// <summary>
         /// Will return a filled 2D matrix of nodes, each with a connected link on their neighbors.
         /// </summary>

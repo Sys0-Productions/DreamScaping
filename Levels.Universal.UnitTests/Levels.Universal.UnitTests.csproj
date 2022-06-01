@@ -43,7 +43,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Level1\DataStructures\NodeMatrixTest.cs" />
-        <Compile Include="Tests.cs" />
+        <Compile Include="Level1\ReportCodes\ReportPoolTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

@@ -19,7 +19,7 @@ namespace MyNamespace
         public static void Draw((int x, int y) size)
         {
             Console.WriteLine(StorageTxtVis.Draw(
-                new NodeMatrix<int>(size),
+                NodeMatrix<int>.Build(size),
                 new List<StringBuilder>().FillWithNew((int)size.y * 2 - 1).ToArray(),
                 new NodeMatrixStylizer()));
         }

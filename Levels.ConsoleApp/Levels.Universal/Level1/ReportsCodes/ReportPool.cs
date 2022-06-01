@@ -9,13 +9,14 @@ using Levels.Universal;
 
 public class ReportPool
 {
+    // TODO: Change to DI
     private static ReportPool _service;
     // Linked node chain, only pull/add from the top of a stack.
     private readonly Stack<Report> _reportPoolStack = new Stack<Report>();
 
     public ReportPool()
     {
-        // TODO: Make good.
+        // TODO: Change to DI
         _service = this;
     }
 

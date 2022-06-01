@@ -50,7 +50,6 @@
         <Reference Include="System.Xml.Linq" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Class1.cs" />
         <Compile Include="Level0\Constructors\ArrayFill.cs" />
         <Compile Include="Level0\IEnumerableExtensions\EnumerableExtension.cs" />
         <Compile Include="Level0\ReportCodes.Core\IReport.cs" />
