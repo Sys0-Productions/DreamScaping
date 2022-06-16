@@ -28,9 +28,4 @@ public class ReportPool
         var holder = _service._reportPoolStack.Pop();
         return holder;
     }
-
-    public static void StartReport()
-    {
-        
-    }
 }

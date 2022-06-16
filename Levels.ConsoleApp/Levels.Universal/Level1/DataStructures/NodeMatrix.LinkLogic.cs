@@ -31,7 +31,7 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
             return storageLink.nodeA == a && storageLink.nodeB == b ||
                    storageLink.nodeA == b && storageLink.nodeB == a;
         }
-        
+
         /// <summary>
         /// Used to see if there is a connection between two nodes in a <see cref="NodeMatrix{TN}"/>.
         /// </summary>
@@ -49,6 +49,18 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
             }
 
             return flag;
+        }
+        
+        /// <summary>
+        /// Used to see if there is a connection between two nodes in a <see cref="NodeMatrix{TN}"/>.
+        /// </summary>
+        /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> to check against.</param>
+        /// <param name="a">One of the two nodes the connection is on.</param>
+        /// <param name="b">One of the two nodes the connection is on.</param>
+        /// <returns>True if there is a link. False if there is not.</returns>
+        public static bool IsLinked<TN>(this NodeMatrix<TN> nodeMatrix, (int x, int y) a, (int x, int y) b)
+        {
+            return IsLinked(nodeMatrix, ViewNodeAt(nodeMatrix, a), ViewNodeAt(nodeMatrix, b));
         }
 
         /// <summary>
@@ -108,36 +120,7 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
 
             return ConnectionTypes.Not;
         }
-        
-        /// <summary>
-        /// Returns all connections of nodes A and B.
-        /// </summary>
-        /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> to check against.</param>
-        /// <param name="a"> nodes the connection is on.</param>
-        /// <returns>Returns all connections on <see cref="a"/>.</returns>
-        public static ConnectionTypes[] CheckConnectionsType<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a)
-        {
-            var empty = true;
-            var connections = new ConnectionTypes[4];
-            var index = 0;
-            
-            for (int i = 0; i < nodeMatrix._Links.Count; i++)
-            {
-                bool flag = nodeMatrix._Links[i].nodeA == a || nodeMatrix._Links[i].nodeB == a;
-                
-                if (flag)
-                {
-                    empty = false;
-                    connections[index++] = nodeMatrix._Links[i].Connection;
-                }
-            }
-            
-            if (empty)
-                connections[0] = ConnectionTypes.Not;
-            
-            return connections;
-        }
-        
+
         /// <summary>
         /// Will change the <see cref="ConnectionTypes"/> on the link if there is any found.
         /// </summary>
@@ -160,6 +143,11 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
             
             return false;
         }
+
+        public static bool HasNode<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a)
+        {
+            return nodeMatrix._Nodes.Contains(a);
+        }
         
         /// <summary>
         /// Returns a copy of all links for <see cref="a"/> if there are any.
@@ -171,6 +159,9 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// The returned List will have the requested node first in the tuple.</returns>
         public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> ViewLinksOn<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a)
         {
+            if (a == null || !nodeMatrix.HasNode(a))
+                return null;
+            
             var holder = new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
             var flag = false;
 
@@ -179,19 +170,27 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
                 if (nodeMatrix._Links[i].nodeA == a)
                 {
                     holder.Add(nodeMatrix._Links[i]);
-                    flag = true;
                 }
                 else if (nodeMatrix._Links[i].nodeB == a)
                 {
                     holder.Add((nodeMatrix._Links[i].nodeB, nodeMatrix._Links[i].nodeA, nodeMatrix._Links[i].Connection));
-                    flag = true;
                 }
             }
             
-            if (!flag)
-                holder.Add((null, null, ConnectionTypes.Not));
-            
             return holder;
+        }
+        
+        public static Node<TN> ViewNodeAt<TN>(this NodeMatrix<TN> nodeMatrix, (int x, int y) a)
+        {
+            for (int i = 0; i < nodeMatrix._Nodes.Count; i++)
+            {
+                if (nodeMatrix._Nodes[i].Position == a)
+                {
+                    return nodeMatrix._Nodes[i];
+                }
+            }
+            
+            return null;
         }
         
         /// <summary>
@@ -223,7 +222,7 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <returns> Will return true if added, else will return false(like if it already existed).</returns>
         public static bool TryLink<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link)
         {
-            if (IsLinked(nodeMatrix, link.nodeA, link.nodeB))
+            if (IsLinked(nodeMatrix, link.nodeA, link.nodeB) || link.nodeB == null || link.nodeA == null)
                 return false;
 
             nodeMatrix._Links.Add(link);
@@ -261,15 +260,18 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> that the link will be removed from.</param>
         /// <param name="link">The link that will be tried to be removed.</param>
         /// NOTE: <see cref="link.nodeA"/> and <see cref="link.nodeB"/> aren't ordered.
-        /// <returns></returns>
+        /// <returns> True if link was removed. False if no link.</returns>
         public static bool TryUnlink<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link)
         {
-            if (IsLinked(nodeMatrix, link.nodeA, link.nodeB))
-                nodeMatrix._Links.Remove(link);
-
-            nodeMatrix._Links.Add(link);
+            var linked = nodeMatrix.ViewLinkFor<TN>(link.nodeA, link.nodeB);
             
-            return true;
+            if (linked.nodeA is object)
+            {
+                nodeMatrix._Links.Remove(linked);
+                return true;
+            }
+
+            return false;
         }
     }
 }

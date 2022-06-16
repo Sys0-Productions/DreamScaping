@@ -1,9 +1,18 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CProgram_0020Files_005CUnity_005CHub_005CEditor_005C2022_002E2_002E0a9_005CEditor_005CData_005CManaged_005CUnityEngine_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/Filtering/ExcludeCoverageFilters/=Levels_002EUniversal_003B_002A_003BExtensionMethods_002EExtensions_003BFillWithNew/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\Sys0\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_Levels.ConsoleApp.-249174113\Snapshot\snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=08f8794f_002D9ac2_002D473b_002Da209_002D3e7dfd1af445/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from NodeMatrixTest.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da7ac7e8_002Df43d_002D4dee_002Dbbef_002D95d501467ad2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FillNodeMatrix_MultipleSizes_25x25ValidNodeMatrixReturned" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0e6b30ff_002D655c_002D41a7_002Db5c0_002Dd850dd266df7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsLinked_IsLinked_LinkedBetween #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ac639071_002D45da_002D4757_002D840a_002D53c2fe437d99/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IsLinked_IsLinked_LinkedBetween" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::94C9ABB2-984A-4F41-B291-594758746E92::.NETFramework,Version=v4.7.1::Levels.Universal.Tests.DataStructures.NodeMatrixBuilderTest.IsLinked_IsLinked_LinkedBetween&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da7ac7e8_002Df43d_002D4dee_002Dbbef_002D95d501467ad2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FillNodeMatrix_MultipleSizes_25x25ValidNodeMatrixReturned" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

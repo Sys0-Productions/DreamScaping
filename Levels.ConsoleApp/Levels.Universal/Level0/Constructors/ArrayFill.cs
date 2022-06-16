@@ -9,7 +9,7 @@ namespace Levels.Universal.Constructors
     using System.Collections;
     using System.Collections.Generic;
 
-    public partial class ArrayFuncts<T> where T : new() 
+    public partial class ArrayFuncs<T> where T : new() 
     {
         private static List<T> array = new List<T>();
 
