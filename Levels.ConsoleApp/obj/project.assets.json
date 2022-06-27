@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Grace/8.0.0-Beta822": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Grace.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Grace.dll": {}
+        }
+      },
       "Levels.UnityFramework/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -26,6 +35,32 @@
     }
   },
   "libraries": {
+    "Grace/8.0.0-Beta822": {
+      "sha512": "YxAaXAmsaSy9e+q0QpM5Dx2cumIdXuDquyQ0fT5KmYqpC/wQrs/QfMm5HLfBMSSXAj9MuCGdaA2+a9X8+0gdnA==",
+      "type": "package",
+      "path": "grace/8.0.0-beta822",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grace.8.0.0-beta822.nupkg.sha512",
+        "grace.nuspec",
+        "lib/net45/Grace.dll",
+        "lib/net45/Grace.pdb",
+        "lib/net45/Grace.xml",
+        "lib/net6.0/Grace.dll",
+        "lib/net6.0/Grace.pdb",
+        "lib/net6.0/Grace.xml",
+        "lib/netstandard1.0/Grace.dll",
+        "lib/netstandard1.0/Grace.pdb",
+        "lib/netstandard1.0/Grace.xml",
+        "lib/netstandard2.0/Grace.dll",
+        "lib/netstandard2.0/Grace.pdb",
+        "lib/netstandard2.0/Grace.xml",
+        "lib/netstandard2.1/Grace.dll",
+        "lib/netstandard2.1/Grace.pdb",
+        "lib/netstandard2.1/Grace.xml"
+      ]
+    },
     "Levels.UnityFramework/1.0.0": {
       "type": "project",
       "path": "../DreamScaping_Unity/Levels.UnityFramework/Levels.UnityFramework.csproj",
@@ -39,12 +74,14 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Grace >= 8.0.0-Beta822",
       "Levels.UnityFramework >= 1.0.0",
       "Levels.Universal >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sys0\\.nuget\\packages\\": {}
+    "C:\\Users\\Sys0\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -55,13 +92,19 @@
       "packagesPath": "C:\\Users\\Sys0\\.nuget\\packages\\",
       "outputPath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Sys0\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Sys0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -86,6 +129,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Grace": {
+            "target": "Package",
+            "version": "[8.0.0-Beta822, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -101,7 +150,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Sys0\\.dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

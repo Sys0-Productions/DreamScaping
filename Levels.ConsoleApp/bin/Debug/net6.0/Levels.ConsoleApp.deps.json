@@ -8,12 +8,21 @@
     ".NETCoreApp,Version=v6.0": {
       "Levels.ConsoleApp/1.0.0": {
         "dependencies": {
+          "Grace": "8.0.0-Beta822",
           "Levels.UnityFramework": "1.0.0",
           "Levels.Universal": "1.0.0",
           "UnityEngine": "0.0.0.0"
         },
         "runtime": {
           "Levels.ConsoleApp.dll": {}
+        }
+      },
+      "Grace/8.0.0-Beta822": {
+        "runtime": {
+          "lib/net6.0/Grace.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
         }
       },
       "Levels.UnityFramework/1.0.0": {
@@ -44,6 +53,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Grace/8.0.0-Beta822": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YxAaXAmsaSy9e+q0QpM5Dx2cumIdXuDquyQ0fT5KmYqpC/wQrs/QfMm5HLfBMSSXAj9MuCGdaA2+a9X8+0gdnA==",
+      "path": "grace/8.0.0-beta822",
+      "hashPath": "grace.8.0.0-beta822.nupkg.sha512"
     },
     "Levels.UnityFramework/1.0.0": {
       "type": "project",

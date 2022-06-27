@@ -33,4 +33,16 @@
       <None Remove="Levels.Universal\**" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Level2\Engine\Updates\" />
+      <Folder Include="Level3\Engine" />
+      <Folder Include="Level4\ExampleProgram" />
+      <Folder Include="Level4\UserExperience\" />
+      <Folder Include="Level5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Grace" Version="8.0.0-Beta822" />
+    </ItemGroup>
+
 </Project>

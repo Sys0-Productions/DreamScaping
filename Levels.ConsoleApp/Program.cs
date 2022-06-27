@@ -1,60 +1,72 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Levels.Universal;
-using MyNamespace;
-using UnityEngine;
+using Grace.DependencyInjection;
+
+using Levels.ConsoleApp.Engine;
+using Levels.ConsoleApp.Frames;
+using Levels.ConsoleApp.UserExperience;
+using Levels.Universal.Engine;
+
+using static Levels.ConsoleApp.Engine.EngineStates;
+using static Levels.Engine.Frames.Levels;
+
+using Engine = Levels.Universal.Engine.Engine;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        bool running = true;
-        while (running)
-        {
-            
-        }
-        
-        
-        new ReportPool();
-        
-        StorageDrawFacade.Draw((2, 2));
-        
-        Console.WriteLine("\n");
-        Console.WriteLine("\n");
-        
-        StorageDrawFacade.Draw((2, 3));
+    static async Task Main(string[] args) {
+		// int DebugCode = Program.CodeCleaner(args);
+		int DebugCode = 0;
+		Console.WriteLine(DebugCode);
 
-        Console.WriteLine("\n");
-        Console.WriteLine("\n");
-        
-        StorageDrawFacade.Draw((2, 5));
+		// string flags  = Program.FlagCleaner(args);
+		string flags  = "R";
 
-        Console.WriteLine("\n");
-        Console.WriteLine("\n");
-        
-        StorageDrawFacade.Draw((20, 6));
+		var container        = new DependencyInjectionContainer();
+		
+		Console.WriteLine("Variables Setup");
+		
+		// Initialize
+		container.
+			ConfigUserExperience().
+			ConfigFrameManager().
+			ConfigEngine().
+			ConfigUpdatePipeline();
 
-        Console.WriteLine("\n");
-        Console.WriteLine("\n");
-        
-        StorageDrawFacade.Draw((25, 25));
+		container.
+			Locate<FrameManager>().
+				  MainEngine = container.Locate<Engine>();
+
+		container.Locate<UpdatePipeline>().AddUpdate(new Update.ReadInput(from: container.Locate<UserExperience>().GetInputBinds()));
+
+		var engine = container.
+			Locate<Engine>().
+				  Start();
+
+		Console.WriteLine("Initialize Setup");
+
+		var frameManagerTask = new Task(() => engine.FrameManager.RunFrame());
+
+		if (flags.Contains("R")) {
+			while (true) {
+				Console.WriteLine("RunFrame");
+
+				await engine.FrameManager.RunFrame();
+
+				if (engine.State() == isStarting) {
+					engine.SetState(EngineStates.isRunning);
+					//frameManagerTask.Start();
+				}
+					
+
+				//if (engine.State() == isQuitting)
+					//frameManagerTask.Dispose();
+			}
+				
+				// Logic
+
+		}
     }
     
-    private async void MainFrame_Call(object sender, EventArgs e)
-    {
-        if (Monitor.TryEnter(sender))
-        {
-            int fade1 = 1000;
-            while (fade1 != -1)
-            {
-                // Do what ever is on the main frame.
-
-                // Wait for what ever time is left.
-                // If extra call out how close we are to a full frame.
-                await Task.Delay(30);
-                fade1--;
-            }
-        }
-    }
+    
 }
-    

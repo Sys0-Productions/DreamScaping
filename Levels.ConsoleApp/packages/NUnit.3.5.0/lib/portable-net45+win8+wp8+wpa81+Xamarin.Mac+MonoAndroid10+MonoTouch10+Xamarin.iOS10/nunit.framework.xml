@@ -5537,7 +5537,7 @@
         <member name="M:NUnit.Framework.Constraints.ConstraintBuilder.Resolve">
             <summary>
             Resolves this instance, returning a Constraint. If the Builder
-            is not currently in a resolvable state, an exception is thrown.
+            is not currently in a resolvable _state, an exception is thrown.
             </summary>
             <returns>The resolved constraint</returns>
         </member>
@@ -5603,7 +5603,7 @@
         <member name="M:NUnit.Framework.Constraints.ConstraintExpression.Append(NUnit.Framework.Constraints.Constraint)">
             <summary>
             Appends a constraint to the expression and returns that
-            constraint, which is associated with the current state
+            constraint, which is associated with the current _state
             of the expression being built. Note that the constraint
             is not reduced at this time. For example, if there 
             is a NotOperator on the stack we don't reduce and
@@ -6427,7 +6427,7 @@
         </member>
         <member name="P:NUnit.Framework.Constraints.ConstraintResult.Description">
             <summary>
-            Description of the constraint may be affected by the state the constraint had
+            Description of the constraint may be affected by the _state the constraint had
             when <see cref="M:NUnit.Framework.Constraints.Constraint.ApplyTo``1(``0)"/> was performed against the actual value.
             </summary>
         </member>
@@ -7425,7 +7425,7 @@
             starting at a particular point, to a max length
             </summary>
             <param name="collection">The collection containing elements to write.</param>
-            <param name="start">The starting point of the elements to write</param>
+            <param name="Start">The starting point of the elements to write</param>
             <param name="max">The maximum number of elements to write</param>
         </member>
         <member name="T:NUnit.Framework.Constraints.ValueFormatter">
@@ -7482,7 +7482,7 @@
             starting at a particular point, to a max length
             </summary>
             <param name="collection">The collection containing elements to write.</param>
-            <param name="start">The starting point of the elements to write</param>
+            <param name="Start">The starting point of the elements to write</param>
             <param name="max">The maximum number of elements to write</param>
         </member>
         <member name="M:NUnit.Framework.Constraints.MsgUtils.GetTypeRepresentation(System.Object)">
@@ -7532,7 +7532,7 @@
             </summary>
             <param name="s">The string to be clipped</param>
             <param name="maxStringLength">The maximum permitted length of the result string</param>
-            <param name="clipStart">The point at which to start clipping</param>
+            <param name="clipStart">The point at which to Start clipping</param>
             <returns>The clipped string</returns>
         </member>
         <member name="M:NUnit.Framework.Constraints.MsgUtils.ClipExpectedAndActual(System.String@,System.String@,System.Int32,System.Int32)">
@@ -7547,12 +7547,12 @@
         </member>
         <member name="M:NUnit.Framework.Constraints.MsgUtils.FindMismatchPosition(System.String,System.String,System.Int32,System.Boolean)">
             <summary>
-            Shows the position two strings start to differ.  Comparison 
-            starts at the start index.
+            Shows the position two strings Start to differ.  Comparison 
+            starts at the Start index.
             </summary>
             <param name="expected">The expected string</param>
             <param name="actual">The actual string</param>
-            <param name="istart">The index in the strings at which comparison should start</param>
+            <param name="istart">The index in the strings at which comparison should Start</param>
             <param name="ignoreCase">Boolean indicating whether case should be ignored</param>
             <returns>-1 if no mismatch found, or the index where mismatch found</returns>
         </member>
@@ -9178,7 +9178,7 @@
         <member name="T:NUnit.Framework.Interfaces.IApplyToTest">
             <summary>
             The IApplyToTest interface is implemented by self-applying
-            attributes that modify the state of a test in some way.
+            attributes that modify the _state of a test in some way.
             </summary>
         </member>
         <member name="M:NUnit.Framework.Interfaces.IApplyToTest.ApplyToTest(NUnit.Framework.Internal.Test)">
@@ -10923,7 +10923,7 @@
             doesn't improve coverage, the process ends.
             </para>
             <para>
-            In addition, for better results, before start every iteration, the
+            In addition, for better results, before Start every iteration, the
             algorithm "scrambles" dimensions - so for every iteration dimension
             probes in a different order.
             </para>
@@ -11203,7 +11203,7 @@
         <member name="M:NUnit.Framework.Internal.Commands.SkipCommand.Execute(NUnit.Framework.Internal.TestExecutionContext)">
             <summary>
             Overridden to simply set the CurrentResult to the
-            appropriate Skipped state.
+            appropriate Skipped _state.
             </summary>
             <param name="context">The execution context for the test</param>
             <returns>A TestResult</returns>
@@ -11648,7 +11648,7 @@
         </member>
         <member name="P:NUnit.Framework.Internal.Execution.WorkItem.State">
             <summary>
-            Gets the current state of the WorkItem
+            Gets the current _state of the WorkItem
             </summary>
         </member>
         <member name="P:NUnit.Framework.Internal.Execution.WorkItem.Test">
@@ -11701,7 +11701,7 @@
         </member>
         <member name="T:NUnit.Framework.Internal.Execution.WorkItemState">
             <summary>
-            The current state of a work item
+            The current _state of a work item
             </summary>
         </member>
         <member name="F:NUnit.Framework.Internal.Execution.WorkItemState.Ready">
@@ -11827,7 +11827,7 @@
             starting at a particular point, to a max length
             </summary>
             <param name="collection">The collection containing elements to write.</param>
-            <param name="start">The starting point of the elements to write</param>
+            <param name="Start">The starting point of the elements to write</param>
             <param name="max">The maximum number of elements to write</param>
         </member>
         <member name="M:NUnit.Framework.Internal.TextMessageWriter.WriteExpectedLine(NUnit.Framework.Constraints.ConstraintResult)">
@@ -13479,14 +13479,14 @@
             Set the result of the test
             </summary>
             <param name="resultState">The ResultState to use in the result</param>
-            <param name="message">A message associated with the result state</param>
+            <param name="message">A message associated with the result _state</param>
         </member>
         <member name="M:NUnit.Framework.Internal.TestResult.SetResult(NUnit.Framework.Interfaces.ResultState,System.String,System.String)">
             <summary>
             Set the result of the test
             </summary>
             <param name="resultState">The ResultState to use in the result</param>
-            <param name="message">A message associated with the result state</param>
+            <param name="message">A message associated with the result _state</param>
             <param name="stackTrace">Stack trace giving the location of the command</param>
         </member>
         <member name="M:NUnit.Framework.Internal.TestResult.RecordException(System.Exception)">
@@ -15273,7 +15273,7 @@
         </member>
         <member name="M:NUnit.Framework.StringAssert.DoesNotStartWith(System.String,System.String,System.String,System.Object[])">
             <summary>
-            Asserts that a string does not start with another string.
+            Asserts that a string does not Start with another string.
             </summary>
             <param name="expected">The expected string</param>
             <param name="actual">The string to be examined</param>
@@ -15282,7 +15282,7 @@
         </member>
         <member name="M:NUnit.Framework.StringAssert.DoesNotStartWith(System.String,System.String)">
             <summary>
-            Asserts that a string does not start with another string.
+            Asserts that a string does not Start with another string.
             </summary>
             <param name="expected">The expected string</param>
             <param name="actual">The string to be examined</param>

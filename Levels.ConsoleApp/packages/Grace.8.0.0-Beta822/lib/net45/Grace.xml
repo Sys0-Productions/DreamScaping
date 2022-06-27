@@ -565,7 +565,7 @@
             Visit all values in list
             </summary>
             <param name="action">action to call</param>
-            <param name="startAtEnd">start at the end of the linked list</param>
+            <param name="startAtEnd">Start at the end of the linked list</param>
         </member>
         <member name="M:Grace.Data.Immutable.ImmutableLinkedList`1.Contains(`0)">
             <summary>
@@ -4708,7 +4708,7 @@
         </member>
         <member name="P:Grace.DependencyInjection.IInjectionScopeConfiguration.InjectIDisposable">
             <summary>
-            Inject current disposal scope as IDisposable
+            InjectService current disposal scope as IDisposable
             </summary>
         </member>
         <member name="P:Grace.DependencyInjection.IInjectionScopeConfiguration.ReturnKeyedInEnumerable">
@@ -14217,9 +14217,9 @@
             C# extenion class to inject object
             </summary>
         </member>
-        <member name="M:Grace.DependencyInjection.InjectionExtension.Inject(Grace.DependencyInjection.IExportLocatorScope,System.Object,System.Object)">
+        <member name="M:Grace.DependencyInjection.InjectionExtension.InjectService(Grace.DependencyInjection.IExportLocatorScope,System.Object,System.Object)">
             <summary>
-            Inject instance with dependencies
+            InjectService instance with dependencies
             </summary>
             <param name="scope">export locator scope</param>
             <param name="instance">instance to inject</param>

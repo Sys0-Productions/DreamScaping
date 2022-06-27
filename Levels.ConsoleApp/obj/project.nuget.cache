@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ATJlbYR+axRD8goW51pSs1WCftN/JMLEShjM6JD09hZj5Q5v60iAQb9gYDcwfaaOvQ0FQA89c9cld5iDGKzf3Q==",
+  "dgSpecHash": "BM17D9Zdw1280L2B82rTkApStCpFRztXImtVBo9t2mhJ7UOxRo227Ja0yc9CMCFmBFRGvbBNPj5zWQqm/RxSlQ==",
   "success": true,
   "projectFilePath": "F:\\sys0\\Projects\\DreamScaping\\Levels.ConsoleApp\\Levels.ConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sys0\\.nuget\\packages\\grace\\8.0.0-beta822\\grace.8.0.0-beta822.nupkg.sha512"
+  ],
   "logs": []
 }
