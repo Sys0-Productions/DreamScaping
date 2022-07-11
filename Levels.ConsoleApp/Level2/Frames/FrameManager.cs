@@ -9,20 +9,20 @@ namespace Levels.Universal.Engine {
 /// The manager for the frame of an engine.
 /// </summary>
 public class FrameManager {
-	public Update[] AllUpdates;
+	public Update[] /*.*/ AllUpdates;
 
-	public Engine MainEngine;
+	public Engine /*.*/ MainEngine;
 
 	/// <summary>
 	/// The report of the frames status.
 	/// </summary>
-	public Report FrameReport;
+	public Report /*.*/ FrameReport;
 
 	private UpdatePipeline _updatePipeline;
 
 	int count = 0;
 
-		public FrameManager (
+	public FrameManager (
 		UpdatePipeline updatePipeline) {
 		_updatePipeline = updatePipeline;
 	}
