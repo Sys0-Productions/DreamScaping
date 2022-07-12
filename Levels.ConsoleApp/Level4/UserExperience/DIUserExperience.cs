@@ -1,7 +1,7 @@
 ﻿namespace Levels.ConsoleApp.UserExperience {
 using Grace.DependencyInjection;
 
-using Levels.Universal.Engine;
+using Universal;
 
 public static class DIUserExperience {
 	public static DependencyInjectionContainer ConfigUserExperience(

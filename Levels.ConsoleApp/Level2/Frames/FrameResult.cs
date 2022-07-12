@@ -4,7 +4,7 @@
 // Created: 2022-06-19-1:04 AM
 // *********************************************************************************************************************
 
-using Levels.ConsoleApp.Engine;
+using Levels.ConsoleApp;
 
 namespace Levels.Engine.Frames; 
 public struct FrameResult {

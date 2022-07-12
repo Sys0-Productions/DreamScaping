@@ -1,5 +1,5 @@
 ﻿
-namespace Levels.ConsoleApp.Engine;
+namespace Levels.ConsoleApp;
 
 public enum EngineStates {
 	isStarting,

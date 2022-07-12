@@ -1,6 +1,6 @@
 ﻿using Grace.DependencyInjection;
 
-namespace Levels.Universal.Engine; 
+namespace Levels.Universal; 
 public static class DIUpdatePipeline {
 	public static DependencyInjectionContainer ConfigUpdatePipeline(
 		this DependencyInjectionContainer DI) {

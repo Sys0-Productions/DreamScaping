@@ -1,9 +1,9 @@
-﻿using static Levels.Universal.Engine.UserExperience;
+﻿using static Levels.Universal.UserExperience;
 
-namespace Levels.Universal.Engine {
+namespace Levels.Universal {
 
 public interface IUserExperience {
-	public InputBinds GetInputBinds();
+	public UserExperience.InputBinds GetInputBinds();
 }
 
 public partial class UserExperience : IUserExperience {

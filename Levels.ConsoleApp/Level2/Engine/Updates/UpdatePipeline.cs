@@ -1,6 +1,7 @@
-﻿namespace Levels.Universal.Engine {
+﻿namespace Levels.Universal {
 public partial class /**/UpdatePipeline {
 	// Variables
+
 	/// <summary>
 	/// The report for the last called operation.
 	/// </summary>

@@ -1,6 +1,6 @@
-﻿using static Levels.Universal.Engine.UserExperience;
+﻿using static Levels.Universal.UserExperience;
 
-namespace Levels.Universal.Engine; 
+namespace Levels.Universal {
 public partial class Update {
 	public class /*.*/ ReadInput : Update {
 		// Variables
@@ -8,26 +8,30 @@ public partial class Update {
 		public override bool /*.*/ ShouldRestart()=> true;
 		public override bool /*.*/ isAsync()      => true;
 
-		private InputBinds _inputBinds;
+		private UserExperience.InputBinds _inputBinds;
 
 		// Initialization
-		public ReadInput(
-			InputBinds from) {
+		public ReadInput (
+			UserExperience.InputBinds from) {
 
 			_inputBinds = from;
 		}
 
 		// Logic
 
-		public ReadInput Invoke<T>(T withData) {
-			while (checkKeysPressed(Console.ReadKey().Key)) ;
+		public ReadInput Invoke<T> (
+			T withData) {
+			while (checkKeysPressed(
+					   Console.ReadKey().
+							   Key));
 
 			return this;
 		}
 
-		private bool checkKeysPressed(
+		private bool checkKeysPressed (
 			ConsoleKey key) {
 			throw new NotImplementedException();
 		}
 	}
+}
 }

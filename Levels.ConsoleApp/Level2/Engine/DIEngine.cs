@@ -1,14 +1,14 @@
 ﻿using Grace.DependencyInjection;
 
-using Levels.Universal.Engine;
+using Levels.Universal;
 
-namespace Levels.ConsoleApp.Engine; 
+namespace Levels.ConsoleApp; 
 public static class DIEngine {
 	public static DependencyInjectionContainer ConfigEngine(
 		this DependencyInjectionContainer DI) {
 		DI.Configure(
 			c => 
-				c.ExportInstance(new Universal.Engine.Engine(DI.Locate<FrameManager>())));
+				c.ExportInstance(new Universal.Engine(DI.Locate<FrameManager>())));
 
 		return DI;
 	}

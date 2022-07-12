@@ -1,13 +1,14 @@
-﻿using Levels.ConsoleApp.Engine;
+﻿using Levels.ConsoleApp;
 
 // TODO: Change namespace
-namespace Levels.Universal.Engine {
+namespace Levels.Universal {
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 using static EngineStates;
 
-public partial class /*.*/Engine {
+public partial class /*.*/ Engine {
+	//Variables
 
 	/// <summary>
 	/// The state of the engine
@@ -21,10 +22,13 @@ public partial class /*.*/Engine {
 	/// </summary>
 	public readonly FrameManager /*.*/ FrameManager;
 
+	// Initialization
 	public Engine (
 		FrameManager frameManager) {
 		FrameManager = frameManager;
 	}
+
+	// Methods
 
 	/// <summary>
 	/// Puts the engine in a Start state.
@@ -48,10 +52,10 @@ public partial class /*.*/Engine {
 		return this;
 	}
 
-		/// <summary>
-		/// syntactical way of indicating intention.
-		/// </summary>
-		/// <returns></returns>
-		public FrameManager /*.*/ CallOnFrameManager()=> FrameManager;
+	/// <summary>
+	/// syntactical way of indicating intention.
+	/// </summary>
+	/// <returns></returns>
+	public FrameManager /*.*/ CallOnFrameManager()=> FrameManager;
 }
 }

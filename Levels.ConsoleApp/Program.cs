@@ -1,13 +1,13 @@
 ﻿using Grace.DependencyInjection;
 
-using Levels.ConsoleApp.Engine;
+using Levels.ConsoleApp;
 using Levels.ConsoleApp.Frames;
 using Levels.ConsoleApp.UserExperience;
-using Levels.Universal.Engine;
+using Levels.Universal;
 
-using static Levels.ConsoleApp.Engine.EngineStates;
+using static Levels.ConsoleApp.EngineStates;
 
-using Engine = Levels.Universal.Engine.Engine;
+using Engine = Levels.Universal.Engine;
 
 class Program
 {

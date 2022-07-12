@@ -1,6 +1,6 @@
 ﻿using Grace.DependencyInjection;
 
-using Levels.Universal.Engine;
+using Levels.Universal;
 
 namespace Levels.ConsoleApp.Frames; 
 public static class DIFrameManager {

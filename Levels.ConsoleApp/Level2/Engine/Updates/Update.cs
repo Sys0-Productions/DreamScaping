@@ -1,6 +1,6 @@
-﻿using static Levels.Universal.Engine.UserExperience;
+﻿using static Levels.Universal.UserExperience;
 
-namespace Levels.Universal.Engine {
+namespace Levels.Universal {
 public partial class /*.*/ Update {
 	/// <summary>
 	/// The Report of the last call method on this function.

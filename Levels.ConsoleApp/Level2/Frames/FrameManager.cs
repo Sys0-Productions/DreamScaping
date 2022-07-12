@@ -1,10 +1,10 @@
-﻿using static Levels.Universal.Engine.UserExperience;
+﻿using static Levels.Universal.UserExperience;
 using System.Diagnostics;
 
-using Levels.ConsoleApp.Engine;
+using Levels.ConsoleApp;
 using Levels.Engine.Frames;
 
-namespace Levels.Universal.Engine {
+namespace Levels.Universal {
 /// <summary>
 /// The manager for the frame of an engine.
 /// </summary>
@@ -23,7 +23,7 @@ public class FrameManager {
 	private Stopwatch _watch;
 	private Stopwatch _watchTest;
 
-		private UpdatePipeline _updatePipeline;
+	private UpdatePipeline _updatePipeline;
 
 	int count = 0;
 
@@ -108,7 +108,5 @@ public class FrameManager {
 		// Cancel the token
 		cancellationToken.Cancel();
 	}
-
 }
-
 }
