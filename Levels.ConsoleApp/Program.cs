@@ -26,8 +26,6 @@ class Program
 		// Initialize
 		Console.WriteLine(container.ScopeId);
 
-		Console.WriteLine(container.Parent.ScopeId);
-
 		container.
 			ConfigUserExperience().
 			ConfigFrameManager().
@@ -47,19 +45,15 @@ class Program
 		Console.WriteLine("Initialize Setup");
 
 		// Logic
-		var frameManagerTask = new Task(() => engine.FrameManager.RunFrame());
 
 		if (flags.Contains("R")) {
 			while (true) {
-				Console.WriteLine("RunFrame");
-
 				await engine.FrameManager.RunFrame();
 
 				if (engine.State() == isStarting) {
 					engine.SetState(EngineStates.isRunning);
-
+					
 				}
-
 			}
 		}
     }
