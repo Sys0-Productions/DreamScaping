@@ -1,4 +1,4 @@
-﻿using static Levels.Universal.UserExperience;
+﻿using static Levels.Universal.Experience;
 
 namespace Levels.Universal {
 public partial class Update {
@@ -8,11 +8,11 @@ public partial class Update {
 		public override bool /*.*/ ShouldRestart()=> true;
 		public override bool /*.*/ isAsync()      => true;
 
-		private UserExperience.InputBinds _inputBinds;
+		private Experience.InputBinds _inputBinds;
 
 		// Initialization
 		public ReadInput (
-			UserExperience.InputBinds from) {
+			Experience.InputBinds from) {
 
 			_inputBinds = from;
 		}

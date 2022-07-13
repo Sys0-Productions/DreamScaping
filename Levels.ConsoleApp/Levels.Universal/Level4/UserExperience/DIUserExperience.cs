@@ -1,4 +1,4 @@
-﻿namespace Levels.ConsoleApp.UserExperience {
+﻿namespace Levels.Universal.UserExperience {
 using Grace.DependencyInjection;
 
 using Universal;
@@ -8,7 +8,7 @@ public static class DIUserExperience {
 		this DependencyInjectionContainer DI) {
 
 		DI.Configure(
-			c => c.ExportInstance(new UserExperience(new UserExperience.InputBinds())));
+			c => c.ExportInstance(new User.Experience(new User.Experience.InputBinds())));
 
 		return DI;
 	}

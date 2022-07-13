@@ -1,4 +1,4 @@
-﻿using static Levels.Universal.UserExperience;
+﻿using static Levels.Universal.Experience;
 using System.Diagnostics;
 
 using Levels.ConsoleApp;

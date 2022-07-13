@@ -6,9 +6,9 @@
 
 namespace Levels.Universal
 {
-    public class CreationReport : Report
+    public class /*.*/ CreationReport : Report
     {
-        public CreationReport()
+		public /*.*/ CreationReport()
         {
             
         }

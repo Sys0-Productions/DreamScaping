@@ -14,7 +14,7 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
     // TODO: go over comments.
     // TODO: Make Levels.ConsoleApp representation tests.
     // TODO: Make unit tests.
-    public static class NodeMatrixExtension
+    public static class /*.*/ NodeMatrixExtension
     {
         /// <summary>
         /// Checks if there is a connection between the two nodes <see cref="a"/> and <see cref="b"/> at index <see cref="i"/> in <see cref="storage"/>
@@ -24,8 +24,12 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="b">One of two nodes to check the link on.</param>
         /// <param name="i">The index to check for the link at.</param>
         /// <returns></returns>
-        public static bool IsLinkedAt<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a, Node<TN> b, int i)
-        {
+        public static bool /*.*/ IsLinkedAt<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a, 
+			Node<TN> b, 
+			int i){
+
             var storageLink = nodeMatrix._Links[i];
             
             return storageLink.nodeA == a && storageLink.nodeB == b ||
@@ -39,12 +43,13 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="a">One of the two nodes the connection is on.</param>
         /// <param name="b">One of the two nodes the connection is on.</param>
         /// <returns>True if there is a link. False if there is not.</returns>
-        public static bool IsLinked<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a, Node<TN> b)
-        {
+        public static bool /*.*/ IsLinked<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a, 
+			Node<TN> b) {
             bool flag = false;
             
-            for (int i = 0; i < nodeMatrix._Links.Count; i++)
-            {
+            for (int i = 0; i < nodeMatrix._Links.Count; i++) {
                 flag = IsLinkedAt(nodeMatrix, a, b, i) || flag;
             }
 
@@ -58,8 +63,11 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="a">One of the two nodes the connection is on.</param>
         /// <param name="b">One of the two nodes the connection is on.</param>
         /// <returns>True if there is a link. False if there is not.</returns>
-        public static bool IsLinked<TN>(this NodeMatrix<TN> nodeMatrix, (int x, int y) a, (int x, int y) b)
-        {
+        public static bool /*.*/ IsLinked<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(int x, int y) a, 
+			(int x, int y) b) {
+
             return IsLinked(nodeMatrix, ViewNodeAt(nodeMatrix, a), ViewNodeAt(nodeMatrix, b));
         }
 
@@ -71,10 +79,12 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="b">One of the two nodes the link is on.</param>
         /// <returns>Will return the link if it exists, otherwise the returned link will be empty,
         /// check value for link.</returns>
-        public static (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes connection) ViewLinkFor<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a, Node<TN> b)
-        {
-            for (int i = 0; i < nodeMatrix._Links.Count; i++)
-            {
+        public static (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes connection) /*.*/ ViewLinkFor<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a, 
+			Node<TN> b){
+
+            for (int i = 0; i < nodeMatrix._Links.Count; i++) {
                 if (IsLinkedAt(nodeMatrix, a, b, i))
                     return nodeMatrix._Links[i];
             }
@@ -93,8 +103,11 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="type">The type of <see cref="ConnectionTypes"/> to compare against.</param>
         /// <returns>True if there is a link of type. False if there is not.
         /// You should check the link exists first. </returns>
-        public static bool IsLinkType<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a, Node<TN> b, ConnectionTypes type)
-        {
+        public static bool /*.*/ IsLinkType<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a, 
+			Node<TN> b, 
+			ConnectionTypes type){
             var holder = ViewLinkFor(nodeMatrix, a, b);
 
             if (holder.nodeA is null)
@@ -110,10 +123,12 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="a">One of the two nodes the connection is on.</param>
         /// <param name="b">One of the two nodes the connection is on.</param>
         /// <returns></returns>
-        public static ConnectionTypes CheckLinkType<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a, Node<TN> b)
-        {
-            for (int i = 0; i < nodeMatrix._Links.Count; i++)
-            {
+        public static ConnectionTypes /*.*/ CheckLinkType<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a, 
+			Node<TN> b){
+
+            for (int i = 0; i < nodeMatrix._Links.Count; i++) {
                 if (IsLinkedAt(nodeMatrix, a, b, i))
                     return nodeMatrix._Links[i].Connection;
             }
@@ -127,11 +142,12 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> that the link is in.</param>
         /// <param name="link">The link details for the new connection.</param>
         /// <returns>True if the connection was changed. False if not.</returns>
-        public static bool ChangeConnectionType<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> a, Node<TN> b, ConnectionTypes type) link)
-        {
+        public static bool /*.*/ ChangeConnectionType<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(Node<TN> a, Node<TN> b, ConnectionTypes type) link){
             var result = ViewLinkFor(nodeMatrix, link.a, link.b);
-            if (result.connection != ConnectionTypes.Not)
-            {
+
+            if (result.connection != ConnectionTypes.Not) {
                 if (result.connection == link.type)
                     return true;
                 
@@ -144,8 +160,10 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
             return false;
         }
 
-        public static bool HasNode<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a)
-        {
+        public static bool /*.*/ HasNode<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a){
+
             return nodeMatrix._Nodes.Contains(a);
         }
         
@@ -157,38 +175,34 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <returns>Will return all links if any exist, otherwise the returned link will be empty,
         /// check value for link.
         /// The returned List will have the requested node first in the tuple.</returns>
-        public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> ViewLinksOn<TN>(this NodeMatrix<TN> nodeMatrix, Node<TN> a)
-        {
-            if (a == null || !nodeMatrix.HasNode(a))
+        public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> /*.*/ ViewLinksOn<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			Node<TN> a){
+            
+			if (a == null || !nodeMatrix.HasNode(a))
                 return null;
             
             var holder = new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
             var flag = false;
 
-            for (int i = 0; i < nodeMatrix._Links.Count; i++)
-            {
+            for (int i = 0; i < nodeMatrix._Links.Count; i++) {
                 if (nodeMatrix._Links[i].nodeA == a)
-                {
                     holder.Add(nodeMatrix._Links[i]);
-                }
-                else if (nodeMatrix._Links[i].nodeB == a)
-                {
+				else if (nodeMatrix._Links[i].nodeB == a)
                     holder.Add((nodeMatrix._Links[i].nodeB, nodeMatrix._Links[i].nodeA, nodeMatrix._Links[i].Connection));
-                }
-            }
+			}
             
             return holder;
         }
         
-        public static Node<TN> ViewNodeAt<TN>(this NodeMatrix<TN> nodeMatrix, (int x, int y) a)
-        {
-            for (int i = 0; i < nodeMatrix._Nodes.Count; i++)
-            {
+        public static Node<TN> /*.*/ ViewNodeAt<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(int x, int y) a) {
+
+			for (int i = 0; i < nodeMatrix._Nodes.Count; i++) {
                 if (nodeMatrix._Nodes[i].Position == a)
-                {
                     return nodeMatrix._Nodes[i];
-                }
-            }
+			}
             
             return null;
         }
@@ -201,12 +215,11 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <returns>Will return all links if any exist, otherwise the returned link will be empty,
         /// check value for link.
         /// The returned List will have the requested node first in the tuple.</returns>
-        public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> ViewAllLinks<TN>(this NodeMatrix<TN> nodeMatrix)
-        {
+        public static List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)> /*.*/ ViewAllLinks<TN>(
+			this NodeMatrix<TN> nodeMatrix) {
             var holder = new List<(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)>();
             
-            foreach (var link in nodeMatrix._Links)
-            {
+            foreach (var link in nodeMatrix._Links) {
                 holder.Add(link);
             }
             
@@ -220,9 +233,11 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> to get the nodes from.</param>
         /// <param name="link">The link data to be used.</param>
         /// <returns> Will return true if added, else will return false(like if it already existed).</returns>
-        public static bool TryLink<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link)
-        {
-            if (IsLinked(nodeMatrix, link.nodeA, link.nodeB) || link.nodeB == null || link.nodeA == null)
+        public static bool /*.*/ TryLink<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection) link) {
+            
+			if (IsLinked(nodeMatrix, link.nodeA, link.nodeB) || link.nodeB == null || link.nodeA == null)
                 return false;
 
             nodeMatrix._Links.Add(link);
@@ -237,21 +252,18 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="nodeMatrix">The <see cref="NodeMatrix{TN}"/> to get the nodes from.</param>
         /// <param name="link">The link data to be used.</param>
         /// <returns> Will return true if added, else will return false(like if it already existed).</returns>
-        public static Report Link<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link)
-        {
+        public static Report /*.*/ Link<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link){
             var report = new Report();
-            
             var result = CheckLinkType(nodeMatrix, link.nodeA, link.nodeB);
-            if (result != ConnectionTypes.Not)
-            {
-                report.Add(Report.AlreadyExists("A connection of type " + result + " already exists."));
-            }
-            else
-            {
-                nodeMatrix._Links.Add(link);
-            }
             
-            return report;
+			if (result != ConnectionTypes.Not)
+                report.Add(Report.AlreadyExists("A connection of type " + result + " already exists."));
+			else
+                nodeMatrix._Links.Add(link);
+
+			return report;
         }
 
         /// <summary>
@@ -261,8 +273,9 @@ namespace Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic
         /// <param name="link">The link that will be tried to be removed.</param>
         /// NOTE: <see cref="link.nodeA"/> and <see cref="link.nodeB"/> aren't ordered.
         /// <returns> True if link was removed. False if no link.</returns>
-        public static bool TryUnlink<TN>(this NodeMatrix<TN> nodeMatrix, (Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection)  link)
-        {
+        public static bool /*.*/ TryUnlink<TN>(
+			this NodeMatrix<TN> nodeMatrix, 
+			(Node<TN> nodeA, Node<TN> nodeB, ConnectionTypes Connection) link) {
             var linked = nodeMatrix.ViewLinkFor<TN>(link.nodeA, link.nodeB);
             
             if (linked.nodeA is object)

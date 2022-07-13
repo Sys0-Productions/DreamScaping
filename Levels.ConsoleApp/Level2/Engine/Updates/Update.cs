@@ -1,4 +1,4 @@
-﻿using static Levels.Universal.UserExperience;
+﻿using static Levels.Universal.Experience;
 
 namespace Levels.Universal {
 public partial class /*.*/ Update {

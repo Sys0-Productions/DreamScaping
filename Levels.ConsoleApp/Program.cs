@@ -2,7 +2,7 @@
 
 using Levels.ConsoleApp;
 using Levels.ConsoleApp.Frames;
-using Levels.ConsoleApp.UserExperience;
+using Levels.Universal.UserExperience;
 using Levels.Universal;
 
 using static Levels.ConsoleApp.EngineStates;
@@ -19,7 +19,7 @@ class Program
 		// string flags  = Program.FlagCleaner(args);
 		string flags = "R";
 
-		var container        = new DependencyInjectionContainer();
+		var container = new DependencyInjectionContainer();
 		
 		Console.WriteLine("Variables Setup");
 
@@ -36,7 +36,7 @@ class Program
 			Locate<FrameManager>().
 				  MainEngine = container.Locate<Engine>();
 
-		container.Locate<UpdatePipeline>().AddUpdate(new Update.ReadInput(from: container.Locate<UserExperience>().GetInputBinds()));
+		container.Locate<UpdatePipeline>().AddUpdate(new Update.ReadInput(from: container.Locate<User.Experience>().GetInputBinds()));
 
 		var engine = container.
 			Locate<Engine>().
