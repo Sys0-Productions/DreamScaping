@@ -6,9 +6,9 @@
 
 namespace Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes {
 public enum /*.*/ ConnectionTypes {
-    Not,
-    Connected,
-    Disconnected,
-    Locked
+	Not,
+	Connected,
+	Disconnected,
+	Locked
 }
 }

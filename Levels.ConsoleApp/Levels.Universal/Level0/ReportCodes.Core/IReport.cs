@@ -5,5 +5,5 @@
 // *********************************************************************************************************************
 
 namespace Levels.Universal.ReportCodes.Core {
-public interface IReport {}
+public interface IReport { }
 }

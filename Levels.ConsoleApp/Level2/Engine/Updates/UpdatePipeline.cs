@@ -14,9 +14,11 @@ public partial class /**/UpdatePipeline {
 	/// </summary>
 	/// <param name="update"></param>
 	/// <returns></returns>
-	public UpdatePipeline AddUpdate(
+	public UpdatePipeline AddUpdate (
 		Update update) {
-		int      size  = _updates != null ? _updates.Length + 1 : 1;
+		int size = _updates != null
+					   ? _updates.Length + 1
+					   : 1;
 		Update[] newUpdates = new Update[size];
 
 		if (_updates != null)
@@ -32,12 +34,12 @@ public partial class /**/UpdatePipeline {
 		Task[] asyncTasks = new Task[_updates.Length];
 
 		for (int i = 0
-			 ; i < _updates.Length
-			 ; i++) {
+			 ;i < _updates.Length
+			 ;i++) {
 			asyncTasks[i] = _updates[i].
 				RunAsync();
 		}
-	
+
 		return Task.WhenAll(asyncTasks);
 	}
 }

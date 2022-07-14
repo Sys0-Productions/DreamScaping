@@ -9,11 +9,11 @@ using System.Collections.Generic;
 
 public static class Extensions {
 	public static List<T> FillWithNew<T> (
-		this List<T> list
-	  , int          count)
-	    where T : new() {
+		this List<T> list,
+		int count)
+	where T : new() {
 
-		for (int i = 0; i < count; i++) {
+		for (int i = 0;i < count;i++) {
 			list.Add(new T());
 		}
 

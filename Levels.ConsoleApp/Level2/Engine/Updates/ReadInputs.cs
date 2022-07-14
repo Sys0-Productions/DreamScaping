@@ -1,6 +1,4 @@
-﻿using static Levels.Universal.Experience;
-
-namespace Levels.Universal {
+﻿namespace Levels.Universal {
 public partial class Update {
 	public class /*.*/ ReadInput : Update {
 		// Variables
@@ -8,11 +6,11 @@ public partial class Update {
 		public override bool /*.*/ ShouldRestart()=> true;
 		public override bool /*.*/ isAsync()      => true;
 
-		private Experience.InputBinds _inputBinds;
+		private User.Experience.InputBinds _inputBinds;
 
 		// Initialization
 		public ReadInput (
-			Experience.InputBinds from) {
+			User.Experience.InputBinds from) {
 
 			_inputBinds = from;
 		}
@@ -23,7 +21,8 @@ public partial class Update {
 			T withData) {
 			while (checkKeysPressed(
 					   Console.ReadKey().
-							   Key));
+							   Key))
+				;
 
 			return this;
 		}

@@ -20,19 +20,22 @@ public partial class /*.*/ User {
 		}
 
 		public class /*.*/ InputBinds {
-			public static ConsoleKey /*.*/ ValidKeys;
+			public static ConsoleKey /*.*/
+				ValidKeys;
 
 			/// <summary>
 			/// The public report of the last method call.
 			/// </summary>
-			public Report /*.*/ CurrentReport;
+			public Report /*.*/
+				CurrentReport;
 
 			/// <summary>
 			/// List of main keys.
 			/// </summary>
 			private ConsoleKey KeyCombos;
 
-			public InputBinds[] /*.*/ InputBindings;
+			public InputBinds[] /*.*/
+				InputBindings;
 
 			/// <summary>
 			/// Tr

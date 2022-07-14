@@ -8,25 +8,22 @@ namespace Levels.ConsoleApp.Visualizers.DataStructures;
 
 using Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes;
 
-public class NodeMatrixStylizer
-{
-    public char Slot = '*';
-    public char Connection = '-';
-    public char Locked = '=';
-    public char Disconnected = 'x';
+public class NodeMatrixStylizer {
+	public char Slot = '*';
+	public char Connection = '-';
+	public char Locked = '=';
+	public char Disconnected = 'x';
 
-    public char GetConnectionStyle(ConnectionTypes type)
-    {
-        switch (type)
-        {
-            case ConnectionTypes.Connected:
-                return Connection;
-            case ConnectionTypes.Disconnected:
-                return Disconnected;
-            case ConnectionTypes.Locked:
-                return Locked;
-        }
+	public char GetConnectionStyle(ConnectionTypes type) {
+		switch (type) {
+		case ConnectionTypes.Connected:
+		return Connection;
+		case ConnectionTypes.Disconnected:
+		return Disconnected;
+		case ConnectionTypes.Locked:
+		return Locked;
+		}
 
-        return ' ';
-    }
+		return ' ';
+	}
 }

@@ -2,16 +2,16 @@
 
 using Levels.ConsoleApp;
 using Levels.ConsoleApp.Frames;
-using Levels.Universal.UserExperience;
 using Levels.Universal;
+using Levels.Universal.UserExperience;
 
 using static Levels.ConsoleApp.EngineStates;
 
 using Engine = Levels.Universal.Engine;
 
-class Program
-{
-    static async Task Main(string[] args) {
+class Program {
+	static async Task Main (
+		string[] args) {
 		// int DebugCode = Program.CodeCleaner(args);
 		int DebugCode = 0;
 		Console.WriteLine(DebugCode);
@@ -20,7 +20,7 @@ class Program
 		string flags = "R";
 
 		var container = new DependencyInjectionContainer();
-		
+
 		Console.WriteLine("Variables Setup");
 
 		// Initialize
@@ -34,13 +34,17 @@ class Program
 
 		container.
 			Locate<FrameManager>().
-				  MainEngine = container.Locate<Engine>();
+			MainEngine = container.Locate<Engine>();
 
-		container.Locate<UpdatePipeline>().AddUpdate(new Update.ReadInput(from: container.Locate<User.Experience>().GetInputBinds()));
+		container.Locate<UpdatePipeline>().
+				  AddUpdate(
+					  new Update.ReadInput(
+						  from: container.Locate<User.Experience>().
+										  GetInputBinds()));
 
 		var engine = container.
-			Locate<Engine>().
-				  Start();
+					 Locate<Engine>().
+					 Start();
 
 		Console.WriteLine("Initialize Setup");
 
@@ -52,9 +56,9 @@ class Program
 
 				if (engine.State() == isStarting) {
 					engine.SetState(EngineStates.isRunning);
-					
+
 				}
 			}
 		}
-    }
+	}
 }

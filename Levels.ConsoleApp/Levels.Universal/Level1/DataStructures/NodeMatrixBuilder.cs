@@ -16,7 +16,7 @@ public static class /*.*/ NodeMatrixBuilder {
 	public static NodeMatrix<TN> /*.*/ Build<TN> (
 		(int x, int y) size) {
 		var holder = new NodeMatrix<TN>();
-		
+
 		holder.SetSize(size);
 		FillNodeMatrix(holder);
 
@@ -31,7 +31,7 @@ public static class /*.*/ NodeMatrixBuilder {
 	public static void /*.*/ FillNodeMatrix<TN> (
 		NodeMatrix<TN> nodeMatrix) {
 		var nodes = nodeMatrix.GetNodes();
-		
+
 		nodes.Clear();
 
 		// Create all nodes
@@ -46,33 +46,33 @@ public static class /*.*/ NodeMatrixBuilder {
 	}
 
 	private static void CreateNodes<TN> (
-		NodeMatrix<TN> nodeMatrix
-	  , List<Node<TN>> nodes) {
+		NodeMatrix<TN> nodeMatrix,
+		List<Node<TN>> nodes) {
 		var matrixSize = nodeMatrix.GetSize();
 
-		for (int i = 0 ; i < matrixSize.x * matrixSize.y ; i++) {
+		for (int i = 0;i < matrixSize.x * matrixSize.y;i++) {
 			var holder = new Node<TN> { Position = (i % matrixSize.x + 1, i / matrixSize.x + 1) };
 			nodes.Add(holder);
 		}
 	}
 
 	private static void CreateLinks<TN> (
-		NodeMatrix<TN> nodeMatrix
-	  , List<Node<TN>> nodes) {
-		
-		for (int i = 0 ; i < nodes.Count ; i++) {
+		NodeMatrix<TN> nodeMatrix,
+		List<Node<TN>> nodes) {
+
+		for (int i = 0;i < nodes.Count;i++) {
 			var currentNode = nodes[i];
 
 			// Get the node to compare to.
-			for (int j = 0 ; j < nodes.Count ; j++) {
+			for (int j = 0;j < nodes.Count;j++) {
 				if (i == j)
 					continue;
 
 				var compToNode = nodes[j];
 
 				// Positions of each node.
-				(int x, int y) jPosition = compToNode.Position
-							 , iPosition = currentNode.Position;
+				(int x, int y) jPosition = compToNode.Position,
+							   iPosition = currentNode.Position;
 
 				// Make sure at least one position value is the same as the current node,
 				if ((jPosition.x == iPosition.x) ^ (jPosition.y == iPosition.y)

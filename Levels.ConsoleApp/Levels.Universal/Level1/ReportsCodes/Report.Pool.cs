@@ -7,8 +7,6 @@
 namespace Levels.Universal {
 using System.Collections.Generic;
 
-using Levels.Universal;
-
 public partial class /*.*/ Report {
 	public class Pool {
 		// TODO: Change to DI

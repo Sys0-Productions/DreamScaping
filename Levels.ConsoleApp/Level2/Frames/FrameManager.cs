@@ -1,24 +1,24 @@
-﻿using static Levels.Universal.Experience;
-using System.Diagnostics;
-
-using Levels.ConsoleApp;
-using Levels.Engine.Frames;
+﻿using System.Diagnostics;
 
 namespace Levels.Universal {
 /// <summary>
 /// The manager for the frame of an engine.
 /// </summary>
 public class FrameManager {
-	public Update[] /*.*/ AllUpdates;
+	public Update[] /*.*/
+		AllUpdates;
 
-	public Engine /*.*/ MainEngine;
+	public Engine /*.*/
+		MainEngine;
 
-	public int /*.*/ TargetFramePerSecond = 144;
+	public int /*.*/
+		TargetFramePerSecond = 144;
 
 	/// <summary>
 	/// The report of the frames status.
 	/// </summary>
-	public Report /*.*/ FrameReport;
+	public Report /*.*/
+		FrameReport;
 
 	private Stopwatch _watch;
 	private Stopwatch _watchTest;
@@ -49,7 +49,7 @@ public class FrameManager {
 	/// </summary>
 	public async Task RunFrame() {
 		_watch.Restart();
-		
+
 
 		if (!_keyReadout) {
 
@@ -76,7 +76,7 @@ public class FrameManager {
 		// https://gamedev.stackexchange.com/questions/150287/proper-use-of-async-await-and-task-delay-for-a-game-loop
 		var lengthForFrameTime = Math.Max((int)((1000f / 60f) - _watch.ElapsedMilliseconds) - 20, 1);
 		await Task.
-			  Delay(lengthForFrameTime);
+			Delay(lengthForFrameTime);
 
 		if (_watchTest.ElapsedMilliseconds >= 1000) {
 			Console.WriteLine("FRAME: " + count);
@@ -84,8 +84,9 @@ public class FrameManager {
 			_watchTest.Restart();
 		}
 	}
-	
-	public void MonitorKeypress(CancellationTokenSource cancellationToken) {
+
+	public void MonitorKeypress (
+		CancellationTokenSource cancellationToken) {
 		//Sources:
 		//https://darchuk.net/2019/02/08/waiting-for-a-keypress-asynchronously-in-a-c-console-app/
 		//https://www.delftstack.com/howto/csharp/wait-for-keypress-csharp/
@@ -93,18 +94,21 @@ public class FrameManager {
 
 		Console.WriteLine("Capture Key");
 		ConsoleKeyInfo cki = new ConsoleKeyInfo();
-		do { 
+
+		do {
 			// Hides the pressed key
 			cki = Console.ReadKey(true);
 
 			Console.WriteLine(
 				"Keypress: "
-			  + cki.KeyChar.ToString().ToUpper());
+			  + cki.KeyChar.ToString().
+					ToUpper());
 
-				// Wait for an ESC
+			// Wait for an ESC
 		} while (cki.Key != ConsoleKey.Escape);
 
 		_keyReadout = false;
+
 		// Cancel the token
 		cancellationToken.Cancel();
 	}

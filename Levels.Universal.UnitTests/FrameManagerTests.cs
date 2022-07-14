@@ -1,4 +1,3 @@
-﻿namespace Levels.Universal.Tests
-{
-    public class FrameManagerTests {}
+﻿namespace Levels.Universal.Tests {
+	public class FrameManagerTests { }
 }

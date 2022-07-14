@@ -6,8 +6,10 @@
 
 namespace Levels.UnityFramework.Storage {
 public class /*.*/ Node<TD> {
-	public (int x, int y) /*.*/ Position;
-	public TD             /*.*/ Data;
+	public (int x, int y) /*.*/
+		Position;
+	public TD /*.*/
+		Data;
 
 	public Node (
 		(int x, int y) position) {

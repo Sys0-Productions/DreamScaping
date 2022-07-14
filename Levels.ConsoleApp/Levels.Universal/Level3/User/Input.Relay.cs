@@ -10,32 +10,36 @@ public partial class /*.*/ User {
 			/// <summary>
 			/// The container for all controls for the player.
 			/// </summary>
-			private readonly /*.*/ Dictionary<string, List<Control>> _controlDictionary = new Dictionary<string, List<Control>>();
-			public Relay /*.*/ AddControl(
+			private readonly /*.*/ Dictionary<string, List<Control>> _controlDictionary
+				= new Dictionary<string, List<Control>>();
+			public Relay /*.*/ AddControl (
 				Control control) {
 
 				if (_controlDictionary.ContainsKey(control.Command))
-					_controlDictionary[control.Command].Add(control);
+					_controlDictionary[control.Command].
+						Add(control);
 				else
 					_controlDictionary.Add(control.Command, new List<Control> { control });
 
 				return this;
 			}
-			public Relay /*.*/ TryRemoveControl(
+			public Relay /*.*/ TryRemoveControl (
 				Control control) {
 
 				if (_controlDictionary.ContainsKey(control.Command))
-					_controlDictionary[control.Command].Remove(control);
+					_controlDictionary[control.Command].
+						Remove(control);
 
 				return this;
 			}
-			public bool /*.*/ ContainsControl(
+			public bool /*.*/ ContainsControl (
 				Control control) {
 
 				if (!_controlDictionary.ContainsKey(control.Command))
 					return false;
 
-				return _controlDictionary[control.Command].Contains(control);
+				return _controlDictionary[control.Command].
+					Contains(control);
 			}
 
 
@@ -44,14 +48,17 @@ public partial class /*.*/ User {
 			/// </summary>
 			/// <param name="command"> The command being invoked.</param>
 			/// <returns>this</returns>
-			public Relay /*.*/ RelayCommand(
+			public Relay /*.*/ RelayCommand (
 				string command) {
 
 				if (!_controlDictionary.ContainsKey(command))
 					return this;
 
-				for (int i = 0;i < _controlDictionary[command].Count;i++) {
-					_controlDictionary[command][i].PassCommand();
+				for (int i = 0;i
+							 < _controlDictionary[command].
+								   Count;i++) {
+					_controlDictionary[command][i].
+						PassCommand();
 				}
 
 				return this;

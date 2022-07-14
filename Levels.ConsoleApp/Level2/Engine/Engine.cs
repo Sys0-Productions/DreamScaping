@@ -2,8 +2,6 @@
 
 // TODO: Change namespace
 namespace Levels.Universal {
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 
 using static EngineStates;
 
@@ -14,13 +12,15 @@ public partial class /*.*/ Engine {
 	/// The state of the engine
 	/// </summary>
 	private EngineStates _currentState;
-		public EngineStates /*.*/ State()=> _currentState;
-		public EngineStates /*.*/ SetState (EngineStates newState) => _currentState = newState;
+	public EngineStates /*.*/ State()=> _currentState;
+	public EngineStates /*.*/ SetState (
+		EngineStates newState)=> _currentState = newState;
 
 	/// <summary>
 	/// The Manager for this whole project.
 	/// </summary>
-	public readonly FrameManager /*.*/ FrameManager;
+	public readonly FrameManager /*.*/
+		FrameManager;
 
 	// Initialization
 	public Engine (

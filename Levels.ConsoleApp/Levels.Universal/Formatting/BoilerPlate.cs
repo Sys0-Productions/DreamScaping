@@ -5,5 +5,5 @@
 // *********************************************************************************************************************
 
 namespace Levels.Universal.Formatting {
-public class BoilerPlate {}
+public class BoilerPlate { }
 }

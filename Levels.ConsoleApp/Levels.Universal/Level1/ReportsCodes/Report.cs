@@ -8,16 +8,19 @@ namespace Levels.Universal {
 using Levels.Universal.ReportCodes.Core;
 
 public partial class /*.*/ Report : IReport {
-	public string /*.*/ Message;
-	public object /*.*/ Source;
-	public Report /*.*/ Next;
+	public string /*.*/
+		Message;
+	public object /*.*/
+		Source;
+	public Report /*.*/
+		Next;
 
-	public Report() {}
+	public Report() { }
 
 	public Report (
-		string message
-	  , object source
-	  , Report next = null) {
+		string message,
+		object source,
+		Report next = null) {
 
 		Message = message;
 		Source  = source;

@@ -1,6 +1,4 @@
-﻿using static Levels.Universal.Experience;
-
-namespace Levels.Universal {
+﻿namespace Levels.Universal {
 public partial class /*.*/ Update {
 	/// <summary>
 	/// The Report of the last call method on this function.
@@ -16,8 +14,10 @@ public partial class /*.*/ Update {
 	public virtual bool /*.*/ isAsync()      => false;
 
 	public virtual Task /*.*/ RunAsync() {
-		return Task.Run( () => {
-			 int x = 2 + 2;});
+		return Task.Run(
+			() => {
+				int x = 2 + 2;
+			});
 	}
 	public virtual void /*.*/ RunParallel() {
 		var x = 2 + 2;
