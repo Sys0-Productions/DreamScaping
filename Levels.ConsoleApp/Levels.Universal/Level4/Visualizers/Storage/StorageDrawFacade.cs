@@ -4,10 +4,12 @@
 // Created: 2022-05-24-9:08 PM
 // *********************************************************************************************************************
 
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 using Levels.ConsoleApp.Visualizers.DataStructures;
-using Levels.UnityFramework.DataStructure.NodeMatrix;
+using Levels.Universal.DataStructures;
 
 namespace MyNamespace {
 	using ExtensionMethods;
@@ -15,7 +17,7 @@ namespace MyNamespace {
 	class StorageDrawFacade {
 		public static void Draw((int x, int y) size) {
 			Console.WriteLine(StorageTxtVis.Draw(
-				NodeMatrix<int>.Build(size),
+				Node.Matrix<int>.Build(size),
 				new List<StringBuilder>().FillWithNew((int)size.y * 2 - 1).ToArray(),
 				new NodeMatrixStylizer()));
 		}

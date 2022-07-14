@@ -11,7 +11,7 @@ public partial class /*.*/ Update {
 	/// <returns></returns>
 	public virtual bool /*.*/ isContinuous()=> false;
 	public virtual bool /*.*/ ShouldRestart()=> false;
-	public virtual bool /*.*/ isAsync()      => false;
+	public virtual bool /*.*/ isAsync()=> false;
 
 	public virtual Task /*.*/ RunAsync() {
 		return Task.Run(

@@ -29,7 +29,7 @@ public class FrameManager {
 
 	public FrameManager (
 		UpdatePipeline updatePipeline) {
-
+		
 		_updatePipeline = updatePipeline;
 		_consoleKeyTask = Task.Run(
 			() => {

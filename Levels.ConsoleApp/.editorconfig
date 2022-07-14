@@ -104,6 +104,7 @@ resharper_indent_switch_labels = false
 resharper_int_align = true
 resharper_int_align_binary_expressions = false
 resharper_int_align_fields = false
+resharper_int_align_methods = false
 resharper_int_align_parameters = false
 resharper_keep_existing_declaration_block_arrangement = true
 resharper_keep_existing_expr_member_arrangement = false

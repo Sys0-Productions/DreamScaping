@@ -5,13 +5,14 @@
 // *********************************************************************************************************************
 
 // ReSharper disable CompareOfFloatsByEqualityOperator
+
+using System;
+
+using Levels.Universal.DataStructures;
+
 namespace Levels.ConsoleApp.Visualizers.DataStructures;
 
 using System.Text;
-
-using Levels.UnityFramework.DataStructure.NodeMatrix;
-using Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic;
-using Levels.UnityFramework.Storage;
 
 public static class StorageTxtVis {
 	/// <summary>
@@ -21,7 +22,7 @@ public static class StorageTxtVis {
 	/// <param name="builders">Must have double the number of rows as there are in the <see cref="Size"/> minus one.</param>
 	/// <param name="style">The style to use for drawing.</param>
 	/// <returns></returns>
-	public static string Draw<TN>(NodeMatrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style) {
+	public static string Draw<TN>(Node.Matrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style) {
 		if (builders.Length != node.GetSize().y * 2 - 1)
 			throw new ArgumentException("Not enough builders passed. Check method param doc for details.");
 
@@ -37,7 +38,7 @@ public static class StorageTxtVis {
 		return endMatrix.ToString();
 	}
 
-	private static void DrawNodesAndLinks<TN>(NodeMatrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style) {
+	private static void DrawNodesAndLinks<TN>(Node.Matrix<TN> node, StringBuilder[] builders, NodeMatrixStylizer style) {
 		foreach (var slot in node.GetNodes()) {
 			int index = slot.Position.y;
 			// Have a spacer row builder for every row, and then account for array position of builder.
@@ -60,7 +61,7 @@ public static class StorageTxtVis {
 		}
 	}
 
-	private static void DrawSlotConnections<TN>(NodeMatrix<TN> nodes, Node<TN> currentSlot, int row, StringBuilder[] builders, NodeMatrixStylizer style) {
+	private static void DrawSlotConnections<TN>(Node.Matrix<TN> nodes, Node<TN> currentSlot, int row, StringBuilder[] builders, NodeMatrixStylizer style) {
 		var links = nodes.ViewLinksOn(currentSlot);
 
 		foreach (var link in links) {

@@ -58,10 +58,14 @@
     <Compile Include="Level0\IEnumerableExtensions\EnumerableExtension.cs" />
     <Compile Include="Level0\ReportCodes.Core\IReport.cs" />
     <Compile Include="Level1\DataStructures\Datatypes\ConnectionTypes.cs" />
+    <Compile Include="Level1\DataStructures\Examples\Node4.Int.cs" />
+    <Compile Include="Level1\DataStructures\Examples\Node4.String.cs" />
     <Compile Include="Level1\DataStructures\Node.cs" />
-    <Compile Include="Level1\DataStructures\NodeMatrix.cs" />
-    <Compile Include="Level1\DataStructures\NodeMatrix.LinkLogic.cs" />
+    <Compile Include="Level1\DataStructures\Node.Matrix.cs" />
+    <Compile Include="Level1\DataStructures\Node.Matrix.LinkLogic.cs" />
+    <Compile Include="Level1\DataStructures\Node4.cs" />
     <Compile Include="Level1\DataStructures\NodeMatrixBuilder.cs" />
+    <Compile Include="Level1\iNode.cs" />
     <Compile Include="Level1\ReportsCodes\AlreadyExists.cs" />
     <Compile Include="Level1\ReportsCodes\CreationReport.cs" />
     <Compile Include="Level1\ReportsCodes\Report.cs" />
@@ -80,6 +84,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
