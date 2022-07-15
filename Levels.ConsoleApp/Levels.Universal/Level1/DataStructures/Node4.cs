@@ -1,16 +1,15 @@
-﻿///<contrib>Xan.Nava<contrib>
+﻿///<contributers>Xan.Nava<contributers>
 
+namespace Levels.Universal.DataStructures {
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace Levels.Universal.DataStructures;
-
 /// <uses>
 /// Used to make a four connection node of Node4&lt;<see cref="VT"/>=ValueType&gt;. <br/>
-/// <inst>
+/// <instr>
 /// Cast the type based on its reflected type, or only use one type per matrix.
-/// </inst>
+/// </instr>
 /// .<br/>
 /// .<br/>
 /// .<br/>
@@ -24,7 +23,7 @@ namespace Levels.Universal.DataStructures;
 /// </todo>
 /// <typeparam name="VT">Value Type</typeparam>
 public class Node4<VT> : Node<VT> {
-	public(int x, int y) Position {
+	public virtual (int x, int y)  Position {
 		get;
 		protected set;
 	}
@@ -34,28 +33,28 @@ public class Node4<VT> : Node<VT> {
 		protected set;
 	}
 
-	public(Node4<VT> node, Node.ConnectionTypes connecetion) NodeUp {
+	public(iNode<VT> node, Node.ConnectionTypes connecetion) NodeUp {
 		get;
 		protected set;
 	}
-	public(Node4<VT> node, Node.ConnectionTypes connecetion) NodeDown {
+	public(iNode<VT> node, Node.ConnectionTypes connecetion) NodeDown {
 		get;
 		protected set;
 	}
-	public(Node4<VT> node, Node.ConnectionTypes connecetion) NodeLeft {
+	public(iNode<VT> node, Node.ConnectionTypes connecetion) NodeLeft {
 		get;
 		protected set;
 	}
-	public(Node4<VT> node, Node.ConnectionTypes connecetion) NodeRight {
+	public(iNode<VT> node, Node.ConnectionTypes connecetion) NodeRight {
 		get;
 		protected set;
 	}
 
-	public Node4<VT> Setup(
-		((Node4<VT> node, Node.ConnectionTypes connecetion) up, 
-		(Node4<VT> node, Node.ConnectionTypes connecetion) down,
-		(Node4<VT> node, Node.ConnectionTypes connecetion) left,
-		(Node4<VT> node, Node.ConnectionTypes connecetion) right) connections,
+	public virtual Node4<VT> Setup (
+		((iNode<VT> node, Node.ConnectionTypes connecetion) up,
+		(iNode<VT> node, Node.ConnectionTypes connecetion) down,
+		(iNode<VT> node, Node.ConnectionTypes connecetion) left,
+		(iNode<VT> node, Node.ConnectionTypes connecetion) right) connections,
 		(int x, int y) position) {
 
 		NodeUp    = connections.up;
@@ -70,11 +69,11 @@ public class Node4<VT> : Node<VT> {
 		return this;
 	}
 
-	public Node4<VT> Setup(
-		((Node4<VT> node, Node.ConnectionTypes connecetion) up, 
-		(Node4<VT> node, Node.ConnectionTypes connecetion) down,
-		(Node4<VT> node, Node.ConnectionTypes connecetion) left,
-		(Node4<VT> node, Node.ConnectionTypes connecetion) right) connections,
+	public virtual Node4<VT> Setup (
+		((Node4<VT> node, Node.ConnectionTypes connecetion) up,
+			(Node4<VT> node, Node.ConnectionTypes connecetion) down,
+			(Node4<VT> node, Node.ConnectionTypes connecetion) left,
+			(Node4<VT> node, Node.ConnectionTypes connecetion) right) connections,
 		(int x, int y) position,
 		VT value) {
 
@@ -90,8 +89,10 @@ public class Node4<VT> : Node<VT> {
 		base.Value = value;
 	}
 
-	public VT GetValue (
+	public virtual VT GetValue (
 		int index) {
+
 		return base.Value;
 	}
+}
 }
