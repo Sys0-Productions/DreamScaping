@@ -6,7 +6,7 @@
 
 namespace Levels.Universal.DataStructures {
 public class /*.*/ Node<TD> : iNode<TD> {
-	public(int x, int y) Position {
+	public virtual (int x, int y) Position {
 		get;
 		protected set;
 	}

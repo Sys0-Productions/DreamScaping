@@ -3,7 +3,7 @@
 using Levels.Universal;
 
 namespace Levels.ConsoleApp.Frames {
-public static class DIFrameManager {
+public static class FrameManager_DI {
 	public static DependencyInjectionContainer ConfigFrameManager(
 		this DependencyInjectionContainer DI) {
 

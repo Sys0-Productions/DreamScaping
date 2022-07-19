@@ -17,16 +17,9 @@ using System.Runtime.InteropServices;
 /// <todo>
 /// TODO:[FUTURE][C# 11] Change this abstract class to interface. Probably trust people to override Equals by reading documentation.<br/>
 /// https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-abstract-interface-methods <br/>
-/// <code>
-/// Change to interface when we can. And probably trust people to override Equals by reading codumentation.
-/// </code>
 /// </todo>
 /// <typeparam name="VT">Value Type</typeparam>
 public class Node4<VT> : Node<VT> {
-	public virtual (int x, int y)  Position {
-		get;
-		protected set;
-	}
 
 	public Type NodeType {
 		get;
@@ -70,16 +63,16 @@ public class Node4<VT> : Node<VT> {
 	}
 
 	public virtual Node4<VT> Setup (
-		((Node4<VT> node, Node.ConnectionTypes connecetion) up,
-			(Node4<VT> node, Node.ConnectionTypes connecetion) down,
-			(Node4<VT> node, Node.ConnectionTypes connecetion) left,
-			(Node4<VT> node, Node.ConnectionTypes connecetion) right) connections,
+		((Node4<VT> node, Node.ConnectionTypes connecetion) up, 
+		(Node4<VT> node, Node.ConnectionTypes connecetion) down,
+		(Node4<VT> node, Node.ConnectionTypes connecetion) left,
+		(Node4<VT> node, Node.ConnectionTypes connecetion) right) connections,
 		(int x, int y) position,
 		VT value) {
 
 		Setup(connections, position);
 
-		Value = value;
+		base.Value = value;
 
 		return this;
 	}

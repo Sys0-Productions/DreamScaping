@@ -7,17 +7,20 @@
 using System.Text;
 
 using Levels.ConsoleApp.Visualizers.DataStructures;
-using Levels.UnityFramework.DataStructure.NodeMatrix;
+using Levels.Universal.DataStructures;
 
-namespace MyNamespace {
+namespace Levels.Universal.DataStructures {
 using ExtensionMethods;
 
-class StorageDrawFacade {
+	/// <todo>
+	/// Change this to a better place.
+	/// </todo>
+	class StorageDrawFacade {
 	public static void Draw (
 		(int x, int y) size) {
 		Console.WriteLine(
 			StorageTxtVis.Draw(
-				NodeMatrix<int>.Build(size),
+				Node.Matrix<int>.Build(size),
 				new List<StringBuilder>().FillWithNew((int)size.y * 2 - 1).
 										  ToArray(),
 				new NodeMatrixStylizer()));

@@ -19,30 +19,30 @@ class Program {
 		// string flags  = Program.FlagCleaner(args);
 		string flags = "R";
 
-		var container = new DependencyInjectionContainer();
+		var containerDI = new DependencyInjectionContainer();
 
 		Console.WriteLine("Variables Setup");
 
 		// Initialize
-		Console.WriteLine(container.ScopeId);
+		Console.WriteLine(containerDI.ScopeId);
 
-		container.
+		containerDI.
 			ConfigUserExperience().
 			ConfigFrameManager().
 			ConfigEngine().
 			ConfigUpdatePipeline();
 
-		container.
+		containerDI.
 			Locate<FrameManager>().
-			MainEngine = container.Locate<Engine>();
+			MainEngine = containerDI.Locate<Engine>();
 
-		container.Locate<UpdatePipeline>().
+		containerDI.Locate<UpdatePipeline>().
 				  AddUpdate(
 					  new Update.ReadInput(
-						  from: container.Locate<User.Experience>().
-										  GetInputBinds()));
+						containerDI.Locate<User.Experience>().
+							GetInputBinds()));
 
-		var engine = container.
+		var engine = containerDI.
 					 Locate<Engine>().
 					 Start();
 

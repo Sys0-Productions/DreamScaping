@@ -4,8 +4,9 @@
 // Created: 2022-05-20-2:04 AM
 // *********************************************************************************************************************
 
+using Levels.Universal.DataStructures;
+
 namespace Levels.ConsoleApp.Visualizers.DataStructures {
-using Levels.UnityFramework.DataStructure.NodeMatrix.Datatypes;
 
 public class NodeMatrixStylizer {
 	public char Slot = '*';
@@ -14,15 +15,15 @@ public class NodeMatrixStylizer {
 	public char Disconnected = 'x';
 
 	public char GetConnectionStyle(
-		ConnectionTypes type) {
+		Node.ConnectionTypes type) {
 		switch (type) {
-		case ConnectionTypes.Connected:
+		case Node.ConnectionTypes.Connected:
 			return Connection;
 
-		case ConnectionTypes.Disconnected:
+		case Node.ConnectionTypes.Disconnected:
 			return Disconnected;
 
-		case ConnectionTypes.Locked:
+		case Node.ConnectionTypes.Locked:
 			return Locked;
 		}
 

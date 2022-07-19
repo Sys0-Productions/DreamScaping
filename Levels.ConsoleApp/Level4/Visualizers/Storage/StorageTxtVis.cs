@@ -5,13 +5,12 @@
 // *********************************************************************************************************************
 
 // ReSharper disable CompareOfFloatsByEqualityOperator
+
+using Levels.Universal.DataStructures;
+
 namespace Levels.ConsoleApp.Visualizers.DataStructures {
 using System.Drawing;
 using System.Text;
-
-using Levels.UnityFramework.DataStructure.NodeMatrix;
-using Levels.UnityFramework.DataStructure.NodeMatrix.LinkLogic;
-using Levels.UnityFramework.Storage;
 
 public static class StorageTxtVis {
 	/// <summary>
@@ -22,7 +21,7 @@ public static class StorageTxtVis {
 	/// <param name="style">The style to use for drawing.</param>
 	/// <returns></returns>
 	public static string Draw<TN> (
-		NodeMatrix<TN> node,
+		Node.Matrix<TN> node,
 		StringBuilder[] builders,
 		NodeMatrixStylizer style) {
 		if (builders.Length
@@ -50,7 +49,7 @@ public static class StorageTxtVis {
 	}
 
 	private static void DrawNodesAndLinks<TN> (
-		NodeMatrix<TN> node,
+		Node.Matrix<TN> node,
 		StringBuilder[] builders,
 		NodeMatrixStylizer style) {
 		foreach (var slot in node.GetNodes()) {
@@ -82,7 +81,7 @@ public static class StorageTxtVis {
 	}
 
 	private static void DrawSlotConnections<TN> (
-		NodeMatrix<TN> nodes,
+		Node.Matrix<TN> nodes,
 		Node<TN> currentSlot,
 		int row,
 		StringBuilder[] builders,

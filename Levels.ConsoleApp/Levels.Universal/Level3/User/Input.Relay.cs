@@ -2,9 +2,10 @@
 
 namespace Levels.Universal {
 
-public partial class /*.*/ User {
-	public partial class /*.*/ Input {
-		public class /*.*/ Relay {
+// TODO: Abstract to a generic pattern.
+public static partial class /*.*/ User {
+	public static partial class /*.*/ Input {
+		public class /*.*/ Messaging {
 			// Variables
 
 			/// <summary>
@@ -12,7 +13,7 @@ public partial class /*.*/ User {
 			/// </summary>
 			private readonly /*.*/ Dictionary<string, List<Control>> _controlDictionary
 				= new Dictionary<string, List<Control>>();
-			public Relay /*.*/ AddControl (
+			public Messaging /*.*/ AddControl (
 				Control control) {
 
 				if (_controlDictionary.ContainsKey(control.Command))
@@ -23,7 +24,7 @@ public partial class /*.*/ User {
 
 				return this;
 			}
-			public Relay /*.*/ TryRemoveControl (
+			public Messaging /*.*/ TryRemoveControl (
 				Control control) {
 
 				if (_controlDictionary.ContainsKey(control.Command))
@@ -48,7 +49,7 @@ public partial class /*.*/ User {
 			/// </summary>
 			/// <param name="command"> The command being invoked.</param>
 			/// <returns>this</returns>
-			public Relay /*.*/ RelayCommand (
+			public Messaging /*.*/ RelayCommand (
 				string command) {
 
 				if (!_controlDictionary.ContainsKey(command))

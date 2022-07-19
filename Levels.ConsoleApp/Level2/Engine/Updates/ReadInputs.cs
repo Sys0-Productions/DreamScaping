@@ -14,22 +14,26 @@ public partial class Update {
 
 			_inputBinds = from;
 		}
-
+		
 		// Logic
-
 		public ReadInput Invoke<T> (
 			T withData) {
+
 			while (checkKeysPressed(
 					   Console.ReadKey().
-							   Key))
-				;
+							   Key));
 
 			return this;
 		}
 
 		private bool checkKeysPressed (
 			ConsoleKey key) {
+			// TODO: Have the key pressed trigger any InputBinds.
 			throw new NotImplementedException();
+
+			// Convert ConsoleKey to User.Input.Commands
+			// Send Command to Input.Messaging
+			_inputBinds.TriggerAny(key);
 		}
 	}
 }

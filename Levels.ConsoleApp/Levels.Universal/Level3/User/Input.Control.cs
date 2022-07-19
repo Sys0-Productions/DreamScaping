@@ -2,8 +2,8 @@
 
 namespace Levels.Universal {
 
-public partial class /*.*/ User {
-	public partial class /*.*/ Input {
+public static partial class /*.*/ User {
+	public static partial class /*.*/ Input {
 		public partial class /*.*/ Control {
 			/// <summary>
 			/// The string value for the command being invoked.
